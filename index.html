@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<html>
   <head>
+    <meta charset="UTF-8">
     <title>Riley Schnee</title>
+    <link rel="icon" type="image/jpg" href="images/riley.jpg"/>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,10 +14,10 @@
 
   </head>
   <body>
-
+<main>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top ">
-      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand nav-link" href="#" data-value="home">Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,7 +26,7 @@
         <ul class="navbar-nav mr-4">
          
           <li class="nav-item">
-            <a class="nav-link" data-value="about" href="#">About</a>
+            <a class="nav-link" data-value="about" href="#">About Me</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-value="portfolio" href="#">Experience</a>
@@ -33,7 +35,10 @@
             <a class="nav-link" data-value="my_work" href="#">Public Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-value="contact" href="#">Contact</a>
+            <a class="nav-link" data-value="playlist" href="#">Playlist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-value="contact" href="#">Contact Me</a>
           </li>
 
         </ul> 
@@ -41,158 +46,179 @@
     </nav>
 
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="home">
       <div class="overlay">
       </div>
 
-      <div class="container">
-        <div class="description text-center">
-          <h1> Hello! My name is Riley Schnee.
-            <p>  I love creating new things with technology. Fueled by coffee. Aspiring software engineer studying computer science at the University of Michigan. <span style="color: blue;">Go Blue!</span> </p>
-            <button class="btn btn-outline-secondary">See more</button>
+      <div class="container text-center">
+        <div class="description">
+          <h1> Hello! My name is Riley Schnee. </h1>
+          <h3>
+            Fueled by coffee and my love of creating new things, I'm an aspiring software engineer studying computer science at the University of Michigan.<br> <span>Go Blue!</span> 
           </h3>
+            <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='https://drive.google.com/file/d/1UERlSFqo1JSMhuXNtgRNS8u503IeRPYN/view?usp=sharing'; return false;">Resume</button>  
         </div>
       </div>
 
     </header>
 
     <!-- About Me -->
-    <div class="about" id="about">
+    <section class="about" id="about">
       <div class="container">
         <h1 class="text-center">About Me</h1>
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12">
-            <img src="images/riley.jpg" class="img-fluid">
+            <img src="images/riley.jpg" class="img-fluid" alt="Picture of Riley">
           </div>
-          <div class="col-lg-8 col-md-8 col-sm-12" style="padding: 70px 50px;">
+          <div id="about-text" class="col-lg-8 col-md-8 col-sm-0">
             
             <h3>Riley Schnee</h3>
-            <p>
-               Computer Science Major at the University of Michigan's College of Engineering 
+            <p> Riley is a Sophomore at the University of Michigan studying Computer Science in the College of Engineering. She is a peer mentor for the Women in Science and Engineering Residence Program located in Mosher Jordan Hall and is on the Professional Committee for GEECS (Girls in Electrical Engineering and Computer Science). She was a National Center for Women and Information Technology (NCWIT) Aspirations in Computer Virginia Winner in 2017 and a leader of a National Grand-Prize winning team during the 2016 Samsung Solve for Tomorrow Competition. <br> <br> Her initial interest in programming evolved from her love of video games and wanting to become a video game designer. During high school, she took two introductory programming classes, became involved in starting her school's STEM Club and was a part of the LoudounCodes computer science initiative in her county. In her free time, Riley enjoys working on independent projects, spending time with family and friends, reading high fantasy and sci-fi novels, and playing video games with her dad and younger sister. 
+                
             </p>
-               <i href="https://github.com/rileyschnee" class="fa fa-github fa-2x"></i>
-               <i href="https://www.linkedin.com/in/riley-schnee/" class="fa fa-linkedin fa-2x"></i>
+               <a href="https://github.com/rileyschnee"><i class="fa fa-github fa-2x" target="_blank"></i></a>
+               <a href="https://www.linkedin.com/in/riley-schnee/"><i class="fa fa-linkedin fa-2x" target="_blank"></i></a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- portfolio -->
-    <div class="portfolio" id="portfolio">
-         <h1 class="text-center">Experience</h1>
+    <section class="portfolio" id="portfolio">
       <div class="container">
+        <h1 class="text-center">Experience</h1>
         <div class="row">
 
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <img src="images/facebookU.png" class="img-fluid">
-            <p style="text-align: center;"> Facebook University for Engineering Class of 2018 </p>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <img src="images/michigan.jpg" class="img-fluid">
-            <p style="text-align: center;"> University of Michigan Class of 2021 </p>
-          </div>
+          <figure class="col-lg-6 col-md-6 col-sm-12">
+            <img src="images/umichengin.jpg" class="img-fluid" alt="Michigan Engineering">
+            <figcaption class="text-center"> B.S.E. in Computer Science <br> University of Michigan Class of 2021<br> Ann Arbor, MI </figcaption>
+          </figure>
+
+          <figure class="col-lg-6 col-md-6 col-sm-12">
+            <img src="images/facebook.jpg" class="img-fluid" alt="Facebook University">
+            <figcaption class="text-center"> Internship - Summer 2018 <br>Facebook University for Engineering Class of 2018<br>Menlo Park, CA </figcaption>
+          </figure>
+
+        </div>
+        <div class="row">
+
+          <figure class="col-lg-6 col-md-6 col-sm-12">
+            <a href="https://devpost.com/software/hail-to-the-victors" target="_blank"> <img src="images/mhacksx.jpg" class="img-fluid" alt="MHacks X"></a>
+            <figcaption class="text-center"> MHacks X <br> Univeristy of Michigan <br> September 22-24, 2017 <br> Ann Arbor, MI </figcaption>
+          </figure>
+          <figure class="col-lg-6 col-md-6 col-sm-12">
+            <a href="https://devpost.com/software/anita-comp-sci-borg" target="_blank"> <img src="images/technica.jpg" class="img-fluid" alt="Technica"/></a>
+            <figcaption class="text-center"> Technica <br> University of Maryland - College Park <br> November 5-6, 2016 <br> College Park, MD </figcaption>
+          </figure>
+        </div>
+
+        <div class="row">
+
+          <figure class="col-lg-6 col-md-6 col-sm-12">
+            <a href="http://loudouncodes.org/"><img src="images/loudouncodes.jpg" class="img-fluid" alt="Loudoun Codes"></a>
+            <figcaption class="text-center"> Loudoun Codes<br> Loudoun Computer Science Initiative <br> Summer 2016 - Present <br> Loudoun County, VA </figcaption>
+          </figure>
+          <figure class="col-lg-6 col-md-6 col-sm-12">
+            <a href="https://airandspace.si.edu/support/get-involved/student-jobs"> <img src="images/explainer.jpg" class="img-fluid" alt="NASM-UHC Explainer"></a>
+            <figcaption class="text-center"> Smithsonian National Air and Space Museum <br> Udvar-Hazy Center Explainers Program <br> March 2016 - August 2017 <br> Chantilly, VA </figcaption>
+          </figure>
+
+          <div class="row">
+
+          <figure class="col-lg-6 col-md-6 col-sm-12">
+            <a href="solvefortomorrow.html"><img src="images/samsung.jpg" class="img-fluid" alt="Solve for Tomorrow"></a>
+            <figcaption class="text-center"> 2016 Samsung Solve for Tomorrow Contest<br> Loudoun Valley HS STEM Club <br> September 2015 - April 2016 <br> Purcellville, VA </figcaption>
+          </figure>
 
         </div>
       </div>
-    </div>
+    </section>
 
 
-    <div class="my_work" id="my_work">
+  <section class="my_work" id="my_work">
   <div class="container">
   <h1 class="text-center">Public Projects</h1>
     <div class="row">
       <div class="col-md-4 col-lg-4 col-sm-12">
         <div class="card">
           <div class="card-img">
-            <img src="images/p1-alexa.png" class="img-fluid">
+            <img src="images/p1-alexa.png" class="img-fluid" alt="Big Ten Fanfares">
           </div>
           
           <div class="card-body">
           <h4 class="card-title">Big Ten Fanfares</h4>
             <p class="card-text">
-              
               An Amazon Alexa Skill that lets Alexa chant the Big Ten fight songs!
             </p>
           </div>
           <div class="card-footer">
-            <a href="https://www.amazon.com/Riley-Schnee-Big-Ten-Fanfares/dp/B075W76VXX/ref=sr_1_1?ie=UTF8&qid=1520568029&sr=8-1&keywords=riley+schnee" class="card-link">Enable Now</a>
+            <a href="https://www.amazon.com/Riley-Schnee-Big-Ten-Fanfares/dp/B075W76VXX/ref=sr_1_1?ie=UTF8&qid=1520568029&sr=8-1&keywords=riley+schnee" class="card-link" target="_blank">Enable Now</a>
           </div>
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-sm-12">
         <div class="card">
           <div class="card-img">
-            <img src="images/p2-alexatut.png" class="img-fluid">
+            <img src="images/p2-alexatut.png" class="img-fluid" alt="Amazon Alexa Tutorial">
           </div>
           
           <div class="card-body">
              <h4 class="card-title">Amazon Alexa Skill Tutorial</h4>
             <p class="card-text">
-              
-              Need help getting started with Alexa Skill Development?
+              Need help getting started with Alexa Skill Development? Check out my intro tutorial!
             </p>
           </div>
           <div class="card-footer">
-            <a href="https://github.com/rileyschnee/Alexa-Tutorial" class="card-link">Learn Now</a>
+            <a href="https://github.com/rileyschnee/Alexa-Tutorial" class="card-link" target="_blank">Learn Now</a>
           </div>
         </div>
       </div>
       <div class="col-md-4 col-lg-4 col-sm-12">
         <div class="card">
           <div class="card-img">
-            <img src="images/p3-hangman.png" class="img-fluid">
+            <img src="images/p3-hangman.png" class="img-fluid" alt="Hangman Java Game">
           </div>
           
           <div class="card-body">
-          <h4 class="card-title">Hangman Educational Java Project</h4>
+          <h4 class="card-title">Hangman Java Project</h4>
             <p class="card-text">
               
-              Are you a CS teacher looking for a project to give students? 
+              Are you a CS teacher looking for a Java project to give students? Look no further!
             </p>
           </div>
           <div class="card-footer">
-            <a href="https://github.com/rileyschnee/LCPS-Hangman" class="card-link">Access the Project</a>
+            <a href="https://github.com/rileyschnee/LCPS-Hangman" class="card-link" target="_blank">Access the Project</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
+  <section class="playlist" id="playlist">
+  	<div class="container text-center">
+  		<h1 class="text-center">Current Coding Playlist</h1>
+  			<br>
+  			<embed id="spotify">
+  			<iframe src="https://open.spotify.com/embed/user/bluemusicmonkey/playlist/1QxkaVoeVCWeTCxXWO3AFb" width="640" height="380" padding-bottom="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  		</embed>
+  	</div>
+  </section>
 
-    <!-- Contact form -->
-    <div class="contact-form" id="contact">
-     <div class="container">
-      <form>
-       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <h1>Get in Touch</h1> 
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-12 right">
-           <div class="form-group">
-             <input type="text" class="form-control form-control-lg" placeholder="Your Name" name="">
-           </div>
-           <div class="form-group">
-             <input type="email" class="form-control form-control-lg" placeholder="YourEmail@email.com" name="email">
-           </div>
-           <div class="form-group">
-             <textarea class="form-control form-control-lg">
-              
-             </textarea>
-           </div>
-           <input type="submit" class="btn btn-secondary btn-block" value="Send" name="">
-        </div>
-       </div>
-      </form>
-     </div>
-    </div>
+<section class="contact" id="contact">
+    <h1 class="text-center">Contact Me</h1>
+    <br>
+  <div class="typeform-widget" data-url="https://rileyschnee.typeform.com/to/byn6DR" data-transparency="37" data-hide-headers=true data-hide-footer=true style="width: 100%; height: 500px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"> powered by <a href="https://admin.typeform.com/signup?utm_campaign=byn6DR&utm_source=typeform.com-4656557-Basic&utm_medium=typeform&utm_content=typeform-embedded-poweredbytypeform&utm_term=EN" style="color: #999" target="_blank">Typeform</a> </div>
+  </div>
+</section>
 
-
-
-
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src='js/main.js'></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src='js/main.js'></script>
+</main>
+<footer class="text-center">
+  &copy; 2018 by Riley Schnee
+</footer>
 
   </body>
 </html>
