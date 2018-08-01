@@ -230,7 +230,7 @@ footer {
 }
 .my_work .card img{
 	width: 100%;
-	height: 28vh;
+	height: 100%;
 }
 .my_work .card 
 @media and (max-width: 768px){
