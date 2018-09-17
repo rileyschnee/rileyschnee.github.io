@@ -13,9 +13,12 @@ Dark Grey:
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
+
 html,h1,h2,h3,h4,h5,h6,a,p,input,figcaption,footer{
  font-family: "Raleway";
 }
+
+
 section {
   min-height: 78%;
   padding: 0 0 0px 0;
@@ -52,11 +55,15 @@ footer {
 .navbar-toggler{
   background:#fff !important;
 }
+.custom-toggler.navbar-toggler {
+    background-color: #4F4F4F !important;
+}
 
 /* Header */
 .header{
  background-image: url(../images/headerback.JPG);
  background-attachment: fixed;
+ /*background-size: cover;*/
  background-size: cover;
  background-position: center;
 }
@@ -71,6 +78,7 @@ footer {
  position: absolute;
  min-height: 100%;
  min-width: 100%;
+ size: cover;
  left: 0;
  top: 0;
  background: rgba(244, 244, 244, 0.70);
@@ -86,7 +94,6 @@ footer {
 .description h1{
  color:#4F4F4F;
  font-size: 45px;
- font-family: 'Permanent Marker', cursive;
 }
 .description h3{
  color:#666;
@@ -106,7 +113,6 @@ footer {
 .description h1{
  color:#4F4F4F;
  font-size: 30px;
- font-family: 'Permanent Marker', cursive;
 }
 .description h3{
  color:#666;
@@ -141,18 +147,20 @@ footer {
  /*height: 100%;
  width: 100%;*/
  border-radius: 0;
- position: absolute;
+ position: relative;
  padding-top: 10px;
+ padding-bottom: 40px;
 }
 .about span{
  display: block;
  color: #888;
- position: absolute;
+ position: relative;
  left: 115px;
 }
 .about .desc{
  padding: 2em;
  border-left:4px solid #10828C;
+ position: relative;
 }
 .about .desc h3{
  color: #10828C;
@@ -165,7 +173,7 @@ footer {
 }
 .about #about-text{
  padding: 0px 70px 50px;
-
+ position: relative;
 }
 
 /* Style all font awesome icons */
@@ -207,10 +215,15 @@ footer {
  color:#4F4F4F;
  margin: 2em;	
 }
+
+
 .portfolio img{
  width: 100%;
- margin: 1em;
+ padding-right: 10px;
+ padding-left: 10px;
+ padding-bottom: 10px;
 }
+
 .portfolio p{
  text-align: center;
 }
@@ -227,6 +240,7 @@ footer {
 }
 .my_work .card{
 	box-shadow: 0 0 20px #ccc;
+margin-bottom: 30px;
 }
 .my_work .card img{
 	width: 100%;
@@ -242,7 +256,9 @@ footer {
 	color:#4F4F4F;
 }
 .my_work .card-body{
-	padding: 1em;
+	padding-bottom: 20px;
+	 padding-right: 10px;
+ 	padding-left: 10px;
 }
 
 
@@ -271,5 +287,7 @@ footer {
 
 #spotify {
 	text-align: center;
+
 }
+
 
