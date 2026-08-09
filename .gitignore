@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# AI Coding Tool Configuration & Local Agent Memories
+CLAUDE.md
+agents/
+.cursorrules
