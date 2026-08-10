@@ -1,0 +1,10 @@
+---
+import { SITE_NAV } from "../constants"
+import LinkButton from './LinkButton.astro';
+---
+
+<div id="main-menu" class="nav-links">
+  {Object.entries(SITE_NAV.pages).map(([pageName, endpointURL]) => (
+    <LinkButton name={pageName} url={endpointURL} />
+  ))}
+</div>

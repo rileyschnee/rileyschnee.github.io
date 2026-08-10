@@ -1,0 +1,167 @@
+/* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  /* Color palette */
+  --brown: #2d2320;
+  --green: #3a462e;
+  --purple: #1f1332;
+  --gold: #dba119;
+  --cream: #e9e7e4;
+
+  /* UX colors */
+  --bg-color: var(--green);      
+  --text-color: var(--cream);    
+  --accent-color: var(--purple); 
+  --link-color: var(--gold);
+  --hover-color: var(--purple);
+
+  /* Fonts */
+  --font-retro: 'Pixelify Sans', monospace;
+  --font-fantasy: 'Almendra', serif;
+  --font-pixel-fantasy: 'Jacquard', monospace;
+}
+
+
+/* Apply base rules across the entire site */
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-fantasy);
+  font-style: normal;
+  margin: 0;
+  max-width: 100ch;
+
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+  text-rendering: optimizeLegibility;
+}
+
+button {
+    font-family: var(--font-fantasy);
+    font-style: normal;
+}
+
+main {
+  padding: 1rem;
+}
+
+a {
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+a:hover,
+a:focus {
+    color: var(--hover-color);
+    font-weight: bold;
+}
+
+/* Enforce the crisp, block-based retro UI layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-radius: 0px !important; /* Force sharp, non-rounded retro corners */
+}
+
+/* Stop browsers from blurring pixel art */
+img.pixel-art {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.wrapped-blurb {
+    /* Render \n as actual physical line breaks */
+    white-space: pre-line; 
+}
+
+/* footer styles */
+footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}
+
+.footer a {
+    padding: 0.5rem 1rem;
+    color: var(--link-color);
+    background-color: var(--hover-color);
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+.footer a:hover, .footer a:focus {
+    font-weight: normal;
+}
+
+/* header styles */
+header {
+    background-color: var(--accent-color);
+    margin-top: 0;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
+/* nav styles */
+.menu {
+  background-color: var(--hover-color);
+  border: none;
+  color: var(--link-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+button:hover.menu {
+    background-color: var(--bg-color);
+}
+
+.nav-links {
+  width: 100%;
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--link-color);
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: var(--bg-color);
+}
+
+:has(.menu[aria-expanded="true"]) .nav-links {
+  display: unset;
+}
+
+@media screen and (min-width: 636px) {
+  .nav-links {
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
+
+  .menu {
+    display: none;
+  }
+}
