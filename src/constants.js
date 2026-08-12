@@ -8,7 +8,6 @@ export const SITE_METADATA = {
 export const SITE_NAV = {
     pages: {
         Home: "/",
-        About: "/about",
         Games: "/games",
     }
 }
