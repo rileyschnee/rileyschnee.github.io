@@ -2,43 +2,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-  /* Color palette */
-  --brown: #2d2320;
-  --green: #3a462e;
-  --purple: #1f1332;
-  --gold: #dba119;
-  --cream: #e9e7e4;
+    /* Color palette */
+    --brown: #211809;
+    --dark-green: #11160c;
+    --green: #232c19;
+    --purple: #1f1332;
+    --gold: #cea649;
+    /* brighter gold: dba119 */
+    --cream: #d4ccbe;
 
-  /* UX colors */
-  --bg-color: var(--green);      
-  --text-color: var(--cream);    
-  --accent-color: var(--purple); 
-  --link-color: var(--gold);
-  --hover-color: var(--purple);
+    /* UX colors */
+    --bg-color: var(--dark-green);
+    --text-color: var(--cream);
+    --accent-color: var(--brown);
+    --link-color: var(--gold);
+    --hover-color: var(--purple);
 
-  /* Fonts */
-  --font-retro: 'Pixelify Sans', monospace;
-  --font-fantasy: 'Almendra', serif;
-  --font-pixel-fantasy: 'Jacquard', monospace;
+    /* Fonts */
+    --font-retro: 'Pixelify Sans', monospace;
+    --font-fantasy: 'Almendra', serif;
+    --font-pixel-fantasy: 'Jacquard', monospace;
+
+
+    /* Background Textures (background_img) */
+    --checkered-background:
+        linear-gradient(45deg, var(--dark-green) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--dark-green) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--dark-green) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--dark-green) 75%);
+
+    /* Box Shadow Styling (box_shadow) */
+    --cornerless-box-border-med:
+        0 -4px 0 0 var(--gold),
+        /* Top line */
+        0 4px 0 0 var(--gold),
+        /* Bottom line */
+        -4px 0 0 0 var(--gold),
+        /* Left line */
+        4px 0 0 0 var(--gold);
+    /* Right line */
+    --cornerless-box-border-sm:
+        0 -2px 0 0 var(--gold),
+        /* Top line */
+        0 2px 0 0 var(--gold),
+        /* Bottom line */
+        -2px 0 0 0 var(--gold),
+        /* Left line */
+        2px 0 0 0 var(--gold);
+    /* Right line */
 }
 
 
 /* Apply base rules across the entire site */
-html, body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--font-fantasy);
-  font-style: normal;
-  margin: 0;
+html,
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-fantasy);
+    font-style: normal;
+    margin: 0;
 
-  /* -webkit-font-smoothing: antialiased;
+    /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
-  text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+
 }
 
 main {
-  padding: 2rem;
-  max-width: 100ch;
+    padding: 2rem;
+    max-width: 100ch;
 }
 
 button {
@@ -47,9 +79,9 @@ button {
 }
 
 a {
-  display: block;
-  text-decoration: none;
-  color: var(--link-color);
+    display: block;
+    text-decoration: none;
+    color: var(--link-color);
 }
 
 a:hover,
@@ -58,64 +90,127 @@ a:focus {
     font-weight: bold;
 }
 
-/* Enforce the crisp, block-based retro UI layout */
-*, *::before, *::after {
-  box-sizing: border-box;
-  border-radius: 0px !important; /* Force sharp, non-rounded retro corners */
+/* Enforce a crisp, block-based retro UI layout */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    border-radius: 0px !important;
+    /* Force sharp, non-rounded retro corners */
 }
 
 /* Stop browsers from blurring pixel art */
 img.pixel-art {
-  image-rendering: -moz-crisp-edges;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.pixel-box {
+    /* Responsive container settings */
+    width: 100%;
+    max-width: 500px;
+    min-width: 280px;
+    box-sizing: border-box;
+
+    /* Solid background */
+    background-color: var(--brown);
+    padding: 5px 30px;
+    margin: 8px;
+    /* Room for the outer pixel border offset */
+
+    /* Diagonal chamfered pixel borders using box-shadow method */
+    box-shadow: var(--cornerless-box-border-med);
+
+    /* Creates alternating square tiles */
+    background-image: var(--checkered-background);
+
+    background-size: 8px 8px;
+    background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+    image-rendering: pixelated;
+}
+
+/* Customizes the bullet point marker across an entire list */
+ul {
+  list-style-type: "✴︎   "; 
+  list-style-position: outside;
+  margin-left: -5px;
+  margin-top: -15px;
 }
 
 .wrapped-blurb {
     /* Render \n as actual physical line breaks */
-    white-space: pre-line; 
+    white-space: pre-line;
 }
 
 /* footer styles */
 footer {
+    background-color: var(--accent-color);
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
     padding-left: 2rem;
-    padding-top: 0.5rem;
+    padding-top: 1.25rem;
     padding-bottom: 2rem;
+
+    box-shadow: var(--cornerless-box-border-med);
 }
 
 .footer a {
-    padding: 0.5rem 1rem;
-    color: var(--link-color);
     background-color: var(--hover-color);
+    border: none;
+    color: var(--link-color);
+    font-weight: normal;
     text-decoration: none;
-    font-weight: normal;
-  }
+    padding: 5px;
+    max-height: fit-content;
 
-.footer a:hover, .footer a:focus {
-    font-weight: normal;
+    /* Solid background */
+    background-color: var(--green);
+    padding: 5px 15px;
+    margin: 5px 5px;
+    /* Room for the outer pixel border offset */
+
+    box-shadow: var(--cornerless-box-border-sm);
+}
+
+.footer a:hover,
+.footer a:focus {
+    background-color: var(--bg-color);
 }
 
 /* header styles */
 header {
     background-color: var(--accent-color);
+    display: flex;
     margin-top: 0;
     padding-left: 2rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+
+    box-shadow: var(--cornerless-box-border-sm);
 }
 
+nav {
+    display: flex;
+}
 
 /* nav styles */
 .menu {
-  background-color: var(--hover-color);
-  border: none;
-  color: var(--link-color);
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 5px 10px;
+    background-color: var(--hover-color);
+    border: none;
+    color: var(--link-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px;
+    max-height: fit-content;
+
+    /* Solid background */
+    background-color: var(--green);
+    padding: 5px 15px;
+    margin: 5px -5px;
+
+    box-shadow: var(--cornerless-box-border-sm);
 }
 
 button:hover.menu {
@@ -123,44 +218,101 @@ button:hover.menu {
 }
 
 .nav-links {
-  width: 100%;
-  display: none;
-  margin: 0;
+    width: 100%;
+    display: none;
+    margin: 0;
 }
 
 .nav-links a {
-  display: block;
-  text-align: left;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--link-color);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--link-color);
+    margin: 5px 50px 5px;
+    padding: 5px 15px;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: var(--bg-color);
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+
+    box-shadow: var(--cornerless-box-border-sm);
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {
-  display: unset;
+    display: unset;
 }
 
 @media screen and (min-width: 636px) {
-  .nav-links {
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
-  }
+    .nav-links {
+        display: block;
+        position: static;
+        width: auto;
+        background: none;
+        text-align: center;
+    }
 
-  .nav-links a {
-    display: inline-block;
-    padding: 10px 15px;
-  }
+    .nav-links a {
+        display: inline-block;
+        padding: 10px 15px;
+    }
 
-  .menu {
-    display: none;
-  }
+    .menu {
+        display: none;
+    }
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 1000px;
+    /* Limits desktop stretching to center the page */
+    margin: -20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile-title {
+    margin-bottom: -15px;
+    text-align: center;
+    font-size: large;
+}
+
+.profile-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.profile-img {
+    width: 100%;
+    /* Fluid scaling on phone screens */
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.profile-text {
+    flex: 1;
+    font-size: medium;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   3. ADAPTIVE DESKTOP LAYOUT (636px and up)
+   ========================================== */
+@media screen and (min-width: 636px) {
+    .profile-columns {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .profile-img {
+        margin: 0;
+        width: 300px;
+    }
 }

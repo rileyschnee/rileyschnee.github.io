@@ -9,42 +9,40 @@ const landingBlurb =
 	"I\’m a software engineer at Instagram with five+ years of experience bringing thoughtful, user-centered features to life with scalability and resiliency in mind. I approach every project with curiosity, attention to detail, and a commitment to doing the right thing—whether that\’s crafting clean, maintainable code or navigating product development challenges. \n\n With a Computer Science degree from the University of Michigan, I am adamant about putting open communication, empathy, and a bit of humor at the center of collaborations. And I'm eager to learn and grow, believing there\’s always a way to improve how we connect or create. \n\n Outside of work, you\’ll find me exploring new ideas through fantasy books and games, where creativity and strategy often inspire how I tackle problems.";
 
 const hobbies = {
-	currentReads: ["Empire of Shadows by Jacquelyn Benson"],
-	currentGames: ["Stardew Valley", "Witcher 3", "Spider-Man"],
-	currentShows: ["Smallville"],
+	currentReads: ["Empire of Shadows by Jacquelyn Benson", "Heartless by Marissa Meyer (audiobook)", "Iron Gold by Pierce Brown (audiobook)", "The Harry Dresden Files by Jim Butcher (audiobooks)"],
+	currentGames: ["Stardew Valley", "Witcher 3", "Spider-Man (replay)"],
+	currentShows: ["Gravity Falls", "Smallville"],
 };
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 	<!-- Intro -->
-	<h1>{landingTitle}</h1>
-	<p class="wrapped-blurb">{landingBlurb}</p>
-	<br />
+	<div class="profile-container">
+		<div class="profile-title">
+		<h1>{landingTitle}</h1>
+		</div>
+		<div class="profile-columns">
+			<img
+				src="src/assets/images/castle.jpg"
+				alt="Riley Schnee Portrait"
+				class="profile-img"
+			/>
+			<div class="profile-text">
+				<p class="wrapped-blurb">{landingBlurb}</p>
+			</div>
+		</div>
+	</div>
 
 	<!-- Hobbies -->
-	<div>
-		<h3>Hobbies</h3>
-		I enjoy exploring alternate and fantastical worlds in my free time!<br
-		/>Here is what I'm currently reading, watching, and playing...
+	<div class="pixel-box">
+		<h2>In my free time...</h2>
+		I enjoy exploring alternate and fantastical worlds in my free time! Here's what I'm currently reading, watching, and playing...
 		<br />
 
 		{
-			hobbies.currentGames.length !== 0 && (
-				<p>
-					Games:
-					<ul>
-						{hobbies.currentGames.map((item) => (
-							<li>{item}</li>
-						))}
-					</ul>
-				</p>
-			)
-		}
-
-		{
 			hobbies.currentReads.length !== 0 && (
+				<h4>Books:</h4>
 				<p>
-					Books:
 					<ul>
 						{hobbies.currentReads.map((item) => (
 							<li>{item}</li>
@@ -55,9 +53,22 @@ const hobbies = {
 		}
 
 		{
-			hobbies.currentShows.length !== 0 && (
+			hobbies.currentGames.length !== 0 && (
+				<h4>Games:</h4>
 				<p>
-					Shows:
+					<ul>
+						{hobbies.currentGames.map((item) => (
+							<li>{item}</li>
+						))}
+					</ul>
+				</p>
+			)
+		}
+
+		{
+			hobbies.currentShows.length !== 0 && (
+				<h4>TV Shows:</h4>
+				<p>
 					<ul>
 						{hobbies.currentShows.map((item) => (
 							<li>{item}</li>
