@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { IDENTITY, SITE_METADATA } from "../constants.js";
+import castle from "../assets/images/castle.jpg"
+import Image from "astro/components/Image.astro";
 
 const pageTitle = "Home Page";
 
@@ -22,8 +24,8 @@ const hobbies = {
 		<h1>{landingTitle}</h1>
 		</div>
 		<div class="profile-columns">
-			<img
-				src="src/assets/images/castle.jpg"
+			<Image
+				src={castle}
 				alt="Riley Schnee Portrait"
 				class="profile-img"
 			/>
