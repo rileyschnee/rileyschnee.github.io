@@ -86,8 +86,8 @@ a {
 
 a:hover,
 a:focus {
-    color: var(--hover-color);
     font-weight: bold;
+    text-decoration:underline;
 }
 
 /* Enforce a crisp, block-based retro UI layout */
@@ -278,7 +278,8 @@ button:hover.menu {
     width: 100%;
     max-width: 1000px;
     /* Limits desktop stretching to center the page */
-    margin: -20px 20px 20px 20px;
+    margin: auto;
+    margin-bottom: 30px;
     padding: 20px 20px 20px 20px;
     box-sizing: border-box;
 }
