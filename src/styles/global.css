@@ -293,7 +293,9 @@ button:hover.menu {
 .profile-columns {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
+    margin: auto; 
+    max-width: 900px; /* Note to self: Increase or decrease this depending on content! */
 }
 
 .profile-img {
@@ -301,14 +303,17 @@ button:hover.menu {
     /* Fluid scaling on phone screens */
     max-width: 300px;
     height: auto;
-    margin: 0 auto;
-    padding-top: 20px;
+    margin: auto;
+    padding: 10px 10px 10px 10px;
+    background-color: var(--brown);
+
+    box-shadow: var(--cornerless-box-border-med);
 }
 
 .profile-text {
     flex: 1;
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.5;
 }
 
 /* ==========================================
