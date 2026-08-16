@@ -54,28 +54,36 @@
 
 
 /* Apply base rules across the entire site */
-html,
-body {
+html {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-fantasy);
     font-style: normal;
+}
+
+body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
 
     /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
     text-rendering: optimizeLegibility;
-
 }
 
 main {
     padding: 2rem;
-    display: flexbox;
+    flex-grow: 1;
 }
 
+/* Links, buttons and lists */
 button {
     font-family: var(--font-fantasy);
     font-style: normal;
+    background-color: transparent;
+    border: 2px solid #deaa51;
+    cursor: pointer;
 }
 
 a {
@@ -87,7 +95,14 @@ a {
 a:hover,
 a:focus {
     font-weight: bold;
-    text-decoration:underline;
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: "✴︎   ";
+    list-style-position: outside;
+    margin-left: -5px;
+    margin-top: -15px;
 }
 
 /* Enforce a crisp, block-based retro UI layout */
@@ -130,17 +145,36 @@ img.pixel-art {
     image-rendering: pixelated;
 }
 
-/* Customizes the bullet point marker across an entire list */
-ul {
-  list-style-type: "✴︎   "; 
-  list-style-position: outside;
-  margin-left: -5px;
-  margin-top: -15px;
-}
-
 .wrapped-blurb {
     /* Render \n as actual physical line breaks */
     white-space: pre-line;
+}
+
+/* Special components */
+.crystal-ball-btn {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+}
+/* Hide the hover image by default */
+.crystal-ball-btn img.img-hover {
+    display: none !important;
+}
+.crystal-ball-btn img.img-default {
+    display: block !important;
+}
+/* When hovered, switch visibility */
+.crystal-ball-btn:hover img.img-default {
+    display: none !important;
+}
+.crystal-ball-btn:hover img.img-hover {
+    display: block !important;
 }
 
 /* footer styles */
@@ -187,6 +221,8 @@ header {
     padding-left: 2rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
 
     box-shadow: var(--cornerless-box-border-sm);
 }
@@ -294,8 +330,9 @@ button:hover.menu {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    margin: auto; 
-    max-width: 900px; /* Note to self: Increase or decrease this depending on content! */
+    margin: auto;
+    max-width: 900px;
+    /* Note to self: Increase or decrease this depending on content! */
 }
 
 .profile-img {
