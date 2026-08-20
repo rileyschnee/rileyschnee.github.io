@@ -9,6 +9,7 @@ export const SITE_NAV = {
     pages: {
         Home: "/",
         Games: "/games",
+        XP: "/experience",
     }
 }
 
@@ -18,8 +19,8 @@ export const IDENTITY = {
   title: "Senior Software Engineer",
   company: "Meta",
   socialLinks: {
-    Github: "https://github.com/rileyschnee",
-    LinkedIn: "https://www.linkedin.com/in/riley-schnee/",
-    Itch: "https://rileyschnee.itch.io/"
+    "Github": "https://github.com/rileyschnee",
+    "LinkedIn": "https://www.linkedin.com/in/riley-schnee/",
+    "Itch.io": "https://rileyschnee.itch.io/"
   }
 };

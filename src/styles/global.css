@@ -115,8 +115,14 @@ a.bold-hover:hover {
 ul {
     list-style-type: "✴︎   ";
     list-style-position: outside;
-    margin-left: -5px;
-    margin-top: -15px;
+    margin-left: -15px;
+    margin-top: -5px;
+}
+li {
+  margin-bottom: 5px;
+}
+li:last-child {
+  margin-bottom: 0;
 }
 
 /* Enforce a crisp, block-based retro UI layout */
@@ -138,7 +144,6 @@ img.pixel-art {
 .pixel-box {
     /* Responsive container settings */
     width: 100%;
-    max-width: 500px;
     min-width: 280px;
     box-sizing: border-box;
 
@@ -180,9 +185,9 @@ img.pixel-art {
 footer {
     background-color: var(--accent-color);
     display: flex;
+    justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
-    padding-left: 2rem;
     padding-top: 1.25rem;
     padding-bottom: 2rem;
 

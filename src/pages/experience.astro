@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { IDENTITY, SITE_METADATA } from "../constants.js";
+import LinkButton from "../components/LinkButton.astro";
+import ExperienceBox, {
+    type ExperienceEntry,
+} from "../components/ExperienceBox.astro";
+
+const pageTitle = "Experience";
+
+const experiences: ExperienceEntry[] = [
+    {
+        company: "Meta",
+        team: "Instagram Ads",
+        role: "Senior Software Engineer",
+        when: "July 2022 - Present",
+        where: "New York, NY",
+        details: [],
+    },
+    {
+        company: "Meta",
+        team: "Instagram Shopping Inspiration",
+        role: "Software Engineer",
+        when: "June 2021 - July 2022",
+        where: "New York, NY",
+        details: [],
+    },
+    {
+        company: "Meta",
+        team: "Instagram Shopping Search",
+        role: "Software Engineering Intern",
+        when: "June 2020 - Aug 2020",
+        where: "Remote",
+        details: [],
+    },
+    {
+        company: "Meta",
+        team: "Facebook Marketplace Infrastructure",
+        role: "Software Engineering Intern",
+        when: "June 2019 - Aug 2019",
+        where: "Menlo Park, CA",
+        details: [],
+    },
+    {
+        company: "Meta",
+        team: "Facebook University (FBU) for Engineers",
+        role: "iOS Track",
+        when: "June 2018 - Aug 2018",
+        where: "Menlo Park, CA",
+        details: [],
+    },
+    {
+        company: "University of Michigan",
+        team: "EECS 280 Staff",
+        role: "Instructional Assistant",
+        when: "Sept 2019 - Apr 2020",
+        where: "Ann Arbor, MI",
+        details: [],
+    },
+    {
+        company: "Smithsonian National Air and Space Museum",
+        team: "Udvar Hazy Center",
+        role: "Explainer",
+        when: "March 2015 - Aug 2017",
+        where: "Chantilly, VA",
+        details: [],
+    },
+];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <h2 style="text-align:center;">Experience</h2>
+    <div class="page-center-wrapper">
+        <LinkButton
+            name="LinkedIn Experience"
+            url="https://www.linkedin.com/in/riley-schnee/details/experience/"
+        />
+
+        <div class="box-group">
+            {
+                experiences.length !== 0 &&
+                    experiences.map((exp: ExperienceEntry) => (
+                        <ExperienceBox exp={exp} />
+                    ))
+            }
+        </div>
+    </div>
+</BaseLayout>

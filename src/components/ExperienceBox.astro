@@ -1,0 +1,33 @@
+---
+import Image from "astro/components/Image.astro";
+import LinkButton from "./LinkButton.astro";
+
+export interface ExperienceEntry {
+    company: string;
+    team: string;
+    role: string;
+    when: string;
+    where?: string;
+    details?: string[] | string;
+}
+
+const { exp } = Astro.props;
+---
+
+<div class="pixel-box" style="max-width: 600px;">
+    <h3>{exp.company} | {exp.team}</h3>
+    <p>{exp.role} | {exp.when} | {exp.where}</p>
+    {
+        typeof exp.details === "string" ? (
+            // Single string
+            <p style="line-height: 1rem;">{exp.details}</p>
+        ) : (
+            // If it's a list, use bullets
+            <ul>
+                {exp.details.map((detail: string) => (
+                    <li>{detail}</li>
+                ))}
+            </ul>
+        )
+    }
+</div>
