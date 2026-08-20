@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { IDENTITY, SITE_METADATA } from "../constants.js";
+
+const { gameTitle, gameSrc, bgColor } = Astro.props;
+---
+
+<BaseLayout pageTitle={gameTitle}>
+    <h1 style="text-align:center;">{gameTitle}</h1>
+    <div class="page-center-wrapper">
+        <div class="game-display-box" style={`--game-bg: ${bgColor};`}>
+            <iframe
+                src={gameSrc}
+                width="960"
+                height="640"
+                allow="autoplay; fullscreen"
+                scrolling="no"
+                style="border: none; margin: 0; padding: 0;"
+                allowfullscreen
+            >
+            </iframe>
+        </div>
+        <slot />
+    </div>
+</BaseLayout>
+
+<style>
+    .game-display-box {
+        background-color: var(--game-bg);
+        box-shadow: var(--cornerless-dropbox-border-med);
+        /* min-width: 960px;
+    min-height: 640px; */
+        padding: 20px 20px;
+        display: flex;
+        overflow: hidden;
+    }
+    .welcome-to-the-dungeon {
+        background-color: var(--red);
+    }
+</style>

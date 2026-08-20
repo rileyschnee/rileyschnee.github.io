@@ -1,0 +1,18 @@
+---
+import GameLayout from "../layouts/GameLayout.astro";
+import * as credits from "../content/welcome-to-the-dungeon-credits.md";
+---
+
+<GameLayout
+    gameTitle={"Welcome to the Dungeon"}
+    gameSrc="https://rileyschnee.github.io/welcome-to-the-dungeon-build"
+    bgColor="var(--red)"
+>
+    <p>Quick tips: If you go into fullscreen, click 'esc' to exit. If you click "Quit", the game will freeze; simply reload the page to fix.</p>
+    <div>
+        <article class="prose">
+            <!-- This renders the fully compiled markdown file as HTML elements -->
+            <credits.Content />
+        </article>
+    </div>
+</GameLayout>

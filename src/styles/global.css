@@ -10,6 +10,7 @@
     --gold: #cea649;
     /* brighter gold: dba119 */
     --cream: #d4ccbe;
+    --red: #551110;
 
     /* UX colors */
     --bg-color: var(--dark-green);
@@ -40,7 +41,7 @@
         -4px 0 0 0 var(--gold),
         /* Left line */
         4px 0 0 0 var(--gold);
-    /* Right line */
+        /* Right line */
     --cornerless-box-border-sm:
         0 -2px 0 0 var(--gold),
         /* Top line */
@@ -49,7 +50,17 @@
         -2px 0 0 0 var(--gold),
         /* Left line */
         2px 0 0 0 var(--gold);
-    /* Right line */
+        /* Right line */
+    --cornerless-dropbox-border-med:
+        0 -4px 0 0 var(--gold),
+        /* Top line */
+        0 4px 0 0 var(--gold),
+        /* Bottom line */
+        -4px 0 0 0 var(--gold),
+        /* Left line */
+        4px 0 0 0 var(--gold),
+        /* Right line */
+        0 12px 30px rgba(0, 0, 0, 0.6); 
 }
 
 
@@ -87,15 +98,18 @@ button {
 }
 
 a {
-    display: block;
+    display: inline;
     text-decoration: none;
     color: var(--link-color);
 }
 
 a:hover,
 a:focus {
-    font-weight: bold;
     text-decoration: underline;
+}
+
+a.bold-hover:hover {
+    font-weight: bold;
 }
 
 ul {
@@ -150,31 +164,16 @@ img.pixel-art {
     white-space: pre-line;
 }
 
-/* Special components */
-.crystal-ball-btn {
-    width: 64px;
-    height: 64px;
-    margin-right: 10px;
-    display: block;
-    align-items: center;
+/* use to center things! */ 
+.page-center-wrapper {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 0;
-    cursor: pointer;
-    border: none;
-}
-/* Hide the hover image by default */
-.crystal-ball-btn img.img-hover {
-    display: none !important;
-}
-.crystal-ball-btn img.img-default {
-    display: block !important;
-}
-/* When hovered, switch visibility */
-.crystal-ball-btn:hover img.img-default {
-    display: none !important;
-}
-.crystal-ball-btn:hover img.img-hover {
-    display: block !important;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+    margin: auto;
 }
 
 /* footer styles */

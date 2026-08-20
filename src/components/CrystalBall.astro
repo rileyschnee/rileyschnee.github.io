@@ -16,3 +16,31 @@ import crystal_ball from "../assets/art/crystal_ball_default.png";
         class="pixel-art img-hover"
     />
 </button>
+
+<style>
+    .crystal-ball-btn {
+        width: 64px;
+        height: 64px;
+        margin-right: 10px;
+        display: block;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        cursor: pointer;
+        border: none;
+    }
+    /* Hide the hover image by default */
+    .crystal-ball-btn img.img-hover {
+        display: none !important;
+    }
+    .crystal-ball-btn img.img-default {
+        display: block !important;
+    }
+    /* When hovered, switch visibility */
+    .crystal-ball-btn:hover img.img-default {
+        display: none !important;
+    }
+    .crystal-ball-btn:hover img.img-hover {
+        display: block !important;
+    }
+</style>
