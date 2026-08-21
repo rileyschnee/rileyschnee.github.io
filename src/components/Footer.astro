@@ -1,11 +1,12 @@
 ---
-import LinkButton from './LinkButton.astro';
-import { IDENTITY } from '../constants.js';
-
+import LinkButton from "./LinkButton.astro";
+import { IDENTITY } from "../constants.js";
 ---
 
 <footer class="footer">
-  {Object.entries(IDENTITY.socialLinks).map(([platformName, endpointUrl]) => (
-    <LinkButton name={platformName} url={endpointUrl} />
-  ))}
+  {
+    Object.entries(IDENTITY.socialLinks).map(([platformName, endpointUrl]) => (
+      <LinkButton name={platformName} url={endpointUrl} />
+    ))
+  }
 </footer>

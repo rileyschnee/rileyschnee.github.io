@@ -3,12 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { IDENTITY, SITE_METADATA } from "../constants.js";
 import castle from "../assets/images/castle.jpg"
 import Image from "astro/components/Image.astro";
+import * as intro from "../content/intro.md"
 
-const pageTitle = "Home Page";
+const pageTitle = "Home";
 
 const landingTitle = `Welcome to ${IDENTITY.firstName}'s Domain!`;
-const landingBlurb =
-	"I\’m a software engineer at Instagram with five+ years of experience. I enjoy brewing thoughtful, user-centered features to life with scalability and resiliency in mind. I approach every project with curiosity, attention to detail, and a commitment to doing the right thing—whether that\’s crafting clean, maintainable code or navigating product development challenges. \n\n With a Computer Science degree from the University of Michigan, I am adamant about putting open communication, empathy, and a bit of humor at the center of collaborations. And I'm eager to learn and grow, believing there\’s always a way to improve how we connect or create. \n\n Outside of work, you\’ll find me exploring new ideas through fantasy books and games, where creativity and strategy often inspire how I tackle problems.";
 
 const hobbies = {
 	currentReads: ["Empire of Shadows by Jacquelyn Benson", "Iron Gold by Pierce Brown (audiobook)", "The Harry Dresden Files by Jim Butcher (audiobooks)"],
@@ -30,7 +29,9 @@ const hobbies = {
 				class="profile-img"
 			/>
 			<div class="profile-text">
-				<p class="wrapped-blurb">{landingBlurb}</p>
+				<article class="prose">
+					<intro.Content />
+				</article>
 			</div>
 		</div>
 	</div>
@@ -40,7 +41,6 @@ const hobbies = {
 		<h2>In my free time...</h2>
 		I enjoy exploring alternate and fantastical worlds! <br> Here's what I'm currently reading, watching, and playing...
 		<br />
-
 		{
 			hobbies.currentReads.length !== 0 && (
 				<h4>Books:</h4>
@@ -53,7 +53,6 @@ const hobbies = {
 				</p>
 			)
 		}
-
 		{
 			hobbies.currentGames.length !== 0 && (
 				<h4>Games:</h4>
@@ -66,7 +65,6 @@ const hobbies = {
 				</p>
 			)
 		}
-
 		{
 			hobbies.currentShows.length !== 0 && (
 				<h4>TV Shows:</h4>
@@ -81,3 +79,64 @@ const hobbies = {
 		}
 	</div>
 </BaseLayout>
+
+<style>
+
+.profile-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+
+}
+
+.profile-title {
+    margin-bottom: -15px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.profile-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: auto;
+    max-width: 1050px;
+    /* Note to self: Increase or decrease this depending on content! */
+}
+
+.profile-img {
+    width: 100%;
+    /* Fluid scaling on phone screens */
+    max-width: 300px;
+    height: auto;
+    margin: auto;
+    padding: 10px 10px 10px 10px;
+    background-color: var(--brown);
+    box-shadow: var(--cornerless-dropbox-border-med);
+}
+
+.profile-text {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.5;
+	margin-top: -25px;
+}
+
+/* ==========================================
+   3. ADAPTIVE DESKTOP LAYOUT (636px and up)
+   ========================================== */
+@media screen and (min-width: 636px) {
+    .profile-columns {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .profile-img {
+        margin: 0;
+        width: 300px;
+    }
+}
+</style>

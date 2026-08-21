@@ -1,7 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { IDENTITY, SITE_METADATA } from "../constants.js";
+import monster from "../assets/art/dungeon_monster_1000.png";
+import witch from "../assets/art/witch.png";
 import LinkButton from "../components/LinkButton.astro";
+import Image from "astro/components/Image.astro";
+
 const pageTitle = "Games";
 ---
 
@@ -11,30 +15,71 @@ const pageTitle = "Games";
 	<div class="box-group">
 		<!-- Welcome to the Dungeon Card -->
 		<div class="pixel-box" style="max-width: 600px;">
-			<h3>Welcome to the Dungeon</h3>
-			<p>Solo Developer | Unity (3D C#)</p>
+			<Image
+				src={monster}
+				alt="dungeon monster pixel art"
+				class="pixel-art img-float-right w-128 ratio-1-1"
+				style="margin-bottom: -15px;"
+			/>
+			<h2>Welcome to the Dungeon</h2>
+			<p>Solo Developer | Unity (3D)</p>
 			<LinkButton name="Play now" url="/welcome-to-the-dungeon" />
 			<p style="line-height: 1.5rem;">
-				I created this game during my last
-				semester as a Computer Science student at the University of
-				Michigan (Fall 2020) for EECS 494: Intro to Game
-				Development. It took roughly 2 weeks to build, and I
-				leveraged open source assets which helped a ton, considering the short deadline. 
+				I created this game during my last semester as a Computer
+				Science student at the University of Michigan (Fall 2020) for
+				EECS 494: Intro to Game Development. It took roughly 2 weeks to
+				build, and I leveraged open source assets which helped a ton,
+				considering the short deadline.
 			</p>
 			<p style="line-height: 1.5rem;">
-				Fun fact: My parents and sister performed the voice acting for the perishing adventures! 
-				...On that morbid note, good luck with the clean up!
+				Fun fact: My parents and sister performed the voice acting for
+				the perishing adventures! ...On that morbid note, good luck with
+				the clean up!
 			</p>
 		</div>
 
 		<!-- Star Witch Card -->
 		<div class="pixel-box" style="max-width: 600px;">
-			<h3>Star Witch</h3>
-			<p>Engineer & Technical Art | Unity (2D C#)</p>
-			<LinkButton
-				name="View on Itch.io"
-				url="https://lunarladiesstudio.itch.io/star-witch"
+			<Image
+				src={witch}
+				alt="dungeon monster pixel art"
+				class="pixel-art img-float-right w-64 ratio-1-2"
+				style="transform: scaleX(-1); margin-right: 15px; margin-bottom: 10px;"
 			/>
+			<h2>Star Witch</h2>
+			<p>
+				Engineer & Technical Art, Lunar Ladies Studio | Unity (2D)
+			</p>
+			<div class="link-button-row">
+				<LinkButton name="Watch trailer" url="/star-witch" />
+				<LinkButton
+					name="View on Itch.io"
+					url="https://lunarladiesstudio.itch.io/star-witch"
+				/>
+			</div>
+			<p></p>
+			<p style="line-height: 1.5rem;">
+				Star Witch is a whimsical, 2D puzzle-platforming adventure game.
+				Travel the galaxy, visit peculiar planets, and wield your magic
+				powers to save the quirky creatures that inhabit them from the
+				Chaos Witch and her minions! Your spellbook is powerful, but be
+				careful - with new ecosystems come new challenges. You must
+				adapt in order to protect the citizens of the galaxy!
+			</p>
+			<p style="line-height: 1.5rem;">
+				Lunar Ladies Studio was our team of four students from the
+				University of Michigan. During the Fall 2020 semester, we
+				developed Star Witch for EECS 494: Game Development. Star Witch
+				won 3rd place at the Winter 2020 class showcase!
+			</p>
+			<a
+				href="https://www.indiedb.com/games/star-witch"
+				title="View Star Witch on IndieDB"
+				><img
+					src="https://button.indiedb.com/popularity/medium/games/75174.png"
+					alt="Star Witch"
+				/></a
+			>
 		</div>
 	</div>
 </BaseLayout>

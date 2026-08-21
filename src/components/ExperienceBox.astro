@@ -9,6 +9,7 @@ export interface ExperienceEntry {
     when: string;
     where?: string;
     details?: string[] | string;
+    type?: "professional" | "intern" | "high school";
 }
 
 const { exp } = Astro.props;

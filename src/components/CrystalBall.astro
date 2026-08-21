@@ -1,19 +1,19 @@
 ---
 import Image from "astro/components/Image.astro";
-import crystal_ball_hover from "../assets/art/crystal_ball_hover.png";
-import crystal_ball from "../assets/art/crystal_ball_default.png";
+import crystal_ball_hover from "../assets/art/crystal_ball_glow_1000.png";
+import crystal_ball from "../assets/art/crystal_ball_default_1000.png";
 ---
 
 <button class="crystal-ball-btn">
     <Image
         src={crystal_ball}
         alt="crystal ball icon"
-        class="pixel-art img-default"
+        class="pixel-art img-default w-64 ratio-1-1"
     />
     <Image
         src={crystal_ball_hover}
         alt="glowing crystal ball icon"
-        class="pixel-art img-hover"
+        class="pixel-art img-hover w-64 ratio-1-1"
     />
 </button>
 

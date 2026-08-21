@@ -18,6 +18,7 @@
     --accent-color: var(--brown);
     --link-color: var(--gold);
     --hover-color: var(--purple);
+    --shadow-color: rgba(0, 0, 0, 0.6);
 
     /* Fonts */
     --font-retro: 'Pixelify Sans', monospace;
@@ -40,8 +41,9 @@
         /* Bottom line */
         -4px 0 0 0 var(--gold),
         /* Left line */
-        4px 0 0 0 var(--gold);
+        4px 0 0 0 var(--gold),
         /* Right line */
+        0 12px 30px var(--shadow-color);
     --cornerless-box-border-sm:
         0 -2px 0 0 var(--gold),
         /* Top line */
@@ -49,8 +51,9 @@
         /* Bottom line */
         -2px 0 0 0 var(--gold),
         /* Left line */
-        2px 0 0 0 var(--gold);
+        2px 0 0 0 var(--gold),
         /* Right line */
+        0 6px 15px var(--shadow-color);
     --cornerless-dropbox-border-med:
         0 -4px 0 0 var(--gold),
         /* Top line */
@@ -60,7 +63,7 @@
         /* Left line */
         4px 0 0 0 var(--gold),
         /* Right line */
-        0 12px 30px rgba(0, 0, 0, 0.6); 
+        0 12px 30px var(--shadow-color);
 }
 
 
@@ -112,17 +115,29 @@ a.bold-hover:hover {
     font-weight: bold;
 }
 
+.link-button-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
 ul {
     list-style-type: "✴︎   ";
     list-style-position: outside;
     margin-left: -15px;
     margin-top: -5px;
 }
+
 li {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
+
+li:first-child {
+    margin-top: -10px;
+}
+
 li:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* Enforce a crisp, block-based retro UI layout */
@@ -135,10 +150,50 @@ li:last-child {
 }
 
 /* Stop browsers from blurring pixel art */
-img.pixel-art {
+.pixel-art {
     image-rendering: -moz-crisp-edges;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
+    image-rendering: crisp-edges !important;
+    image-rendering: pixelated !important;
+
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    height: auto;
+}
+
+.ratio-1-1 {
+    aspect-ratio: 1 / 1;
+}
+
+/* For 64x64 standard assets */
+.ratio-1-2 {
+    aspect-ratio: 1 / 2;
+}
+
+/* For 32x64 tall assets */
+.ratio-2-1 {
+    aspect-ratio: 2 / 1;
+}
+
+/* For 64x32 wide assets */
+
+.w-32 {
+    width: 16px !important;
+}
+
+.w-64 {
+    width: 32px !important;
+}
+
+.w-128 {
+    width: 64px !important;
+}
+
+.w-192 {
+    width: 86px !important;
+}
+
+.w-256 {
+    width: 128px !important;
 }
 
 .pixel-box {
@@ -164,12 +219,14 @@ img.pixel-art {
     image-rendering: pixelated;
 }
 
-.wrapped-blurb {
-    /* Render \n as actual physical line breaks */
-    white-space: pre-line;
+.img-float-right {
+    float: right;
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-bottom: -15px;
 }
 
-/* use to center things! */ 
+/* use to center things! */
 .page-center-wrapper {
     display: flex;
     flex-direction: column;
@@ -305,6 +362,27 @@ button:hover.menu {
     .menu {
         display: none;
     }
+
+    .w-32 {
+        width: 32px !important;
+    }
+
+    .w-64 {
+        width: 64px !important;
+    }
+
+    .w-128 {
+        width: 128px !important;
+    }
+
+    .w-192 {
+        width: 192px !important;
+    }
+
+    .w-256 {
+        width: 256px !important;
+    }
+
 }
 
 .box-group {
@@ -312,62 +390,4 @@ button:hover.menu {
     flex-direction: column;
     gap: 20px;
     margin: auto;
-}
-
-.profile-container {
-    width: 100%;
-    max-width: 1000px;
-    /* Limits desktop stretching to center the page */
-    margin: auto;
-    margin-bottom: 30px;
-    padding: 20px 20px 20px 20px;
-    box-sizing: border-box;
-}
-
-.profile-title {
-    margin-bottom: -15px;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.profile-columns {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    margin: auto;
-    max-width: 900px;
-    /* Note to self: Increase or decrease this depending on content! */
-}
-
-.profile-img {
-    width: 100%;
-    /* Fluid scaling on phone screens */
-    max-width: 300px;
-    height: auto;
-    margin: auto;
-    padding: 10px 10px 10px 10px;
-    background-color: var(--brown);
-
-    box-shadow: var(--cornerless-box-border-med);
-}
-
-.profile-text {
-    flex: 1;
-    font-size: 1.1rem;
-    line-height: 1.5;
-}
-
-/* ==========================================
-   3. ADAPTIVE DESKTOP LAYOUT (636px and up)
-   ========================================== */
-@media screen and (min-width: 636px) {
-    .profile-columns {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    .profile-img {
-        margin: 0;
-        width: 300px;
-    }
 }

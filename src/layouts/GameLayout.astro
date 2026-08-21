@@ -2,23 +2,40 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { IDENTITY, SITE_METADATA } from "../constants.js";
 
-const { gameTitle, gameSrc, bgColor } = Astro.props;
+const { gameTitle, gameSrc, type, bgColor } = Astro.props;
 ---
 
 <BaseLayout pageTitle={gameTitle}>
     <h1 style="text-align:center;">{gameTitle}</h1>
     <div class="page-center-wrapper">
         <div class="game-display-box" style={`--game-bg: ${bgColor};`}>
-            <iframe
-                src={gameSrc}
-                width="960"
-                height="640"
-                allow="autoplay; fullscreen"
-                scrolling="no"
-                style="border: none; margin: 0; padding: 0;"
-                allowfullscreen
-            >
-            </iframe>
+            {
+                type === "yt" && (
+                    <iframe
+                        width="560"
+                        height="315"
+                        src={gameSrc}
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    />
+                )
+            }
+            {
+                type == "game" && (
+                    <iframe
+                        src={gameSrc}
+                        width="960"
+                        height="640"
+                        allow="autoplay; fullscreen"
+                        scrolling="no"
+                        style="border: none; margin: 0; padding: 0;"
+                        allowfullscreen
+                    ></iframe>
+                )
+            }
         </div>
         <slot />
     </div>

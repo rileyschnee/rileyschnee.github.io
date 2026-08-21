@@ -1,0 +1,41 @@
+---
+import GameLayout from "../layouts/GameLayout.astro";
+import LinkButton from "../components/LinkButton.astro";
+---
+
+<GameLayout
+    type="yt"
+    gameTitle={"Star Witch"}
+    gameSrc="https://www.youtube.com/embed/cbwCra5owW0?si=khuaaX7vGvJ1Oqh7"
+    bgColor="var(--purple)"
+>
+    <div class="page-center-wrapper">
+        <div class="link-button-row">
+            <LinkButton
+                name="View & Download on Itch.io"
+                url="https://lunarladiesstudio.itch.io/star-witch"
+            />
+        </div>
+        <p style="line-height: 1.5rem; max-width: 850px;">
+            Star Witch is a whimsical, 2D puzzle-platforming adventure game.
+            Travel the galaxy, visit peculiar planets, and wield your magic
+            powers to save the quirky creatures that inhabit them from the Chaos
+            Witch and her minions! Your spellbook is powerful, but be careful -
+            with new ecosystems come new challenges. You must adapt in order to
+            protect the citizens of the galaxy!
+            <br /><br />
+            Lunar Ladies Studio was our team of four students from the University
+            of Michigan. During the Fall 2020 semester, we developed Star Witch for
+            EECS 494: Game Development. Star Witch won 3rd place at the Winter 2020
+            class showcase!
+        </p>
+        <a
+            href="https://www.indiedb.com/games/star-witch"
+            title="View Star Witch on IndieDB"
+            ><img
+                src="https://button.indiedb.com/popularity/medium/games/75174.png"
+                alt="Star Witch"
+            /></a
+        >
+    </div>
+</GameLayout>

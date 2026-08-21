@@ -1,6 +1,6 @@
 // src/constants.js
 export const SITE_METADATA = {
-  title: "Riley's Domain",
+  title: "Riley Schnee",
   description: "Senior Software Engineer specializing in extensible frameworks and creative gameplay loops.",
   domain: "https://rileyschnee.com"
 };
