@@ -9,11 +9,21 @@ import * as credits from "../content/welcome-to-the-dungeon-credits.md";
     gameSrc="https://rileyschnee.github.io/welcome-to-the-dungeon-build"
     bgColor="var(--red)"
 >
-    <p>Quick tips: If you go into fullscreen, click 'esc' to exit. If you click "Quit", the game will freeze; simply reload the page to fix.</p>
-    <div>
+    <p>
+        Quick tips: If you go into fullscreen, click 'esc' to exit. If you click
+        "Quit", the game will freeze; simply reload the page to fix.
+    </p>
+    <div class="page-center-wrapper">
         <article class="prose">
             <!-- This renders the fully compiled markdown file as HTML elements -->
             <credits.Content />
         </article>
     </div>
 </GameLayout>
+
+<style>
+    p {
+        text-align: center;
+        max-width: 90%;
+    }
+</style>

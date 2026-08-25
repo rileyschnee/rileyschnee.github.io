@@ -8,12 +8,22 @@ const { gameTitle, gameSrc, type, bgColor } = Astro.props;
 <BaseLayout pageTitle={gameTitle}>
     <h1 style="text-align:center;">{gameTitle}</h1>
     <div class="page-center-wrapper">
+        {
+            type == "game" && (
+                <div class="mobile-game-warning">
+                    <p>
+                        ⚠️ Desktop Only: This game requires a keyboard or
+                        controller to play. <br /> Touch controls are not
+                        supported beyond the menu!
+                    </p>
+                </div>
+            )
+        }
         <div class="game-display-box" style={`--game-bg: ${bgColor};`}>
             {
                 type === "yt" && (
                     <iframe
-                        width="560"
-                        height="315"
+                        class="yt"
                         src={gameSrc}
                         title="YouTube video player"
                         frameborder="0"
@@ -26,14 +36,15 @@ const { gameTitle, gameSrc, type, bgColor } = Astro.props;
             {
                 type == "game" && (
                     <iframe
+                        class="game"
                         src={gameSrc}
-                        width="960"
-                        height="640"
+                        max-width="960"
+                        max-height="640"
                         allow="autoplay; fullscreen"
                         scrolling="no"
                         style="border: none; margin: 0; padding: 0;"
                         allowfullscreen
-                    ></iframe>
+                    />
                 )
             }
         </div>
@@ -43,15 +54,35 @@ const { gameTitle, gameSrc, type, bgColor } = Astro.props;
 
 <style>
     .game-display-box {
+        width: 95%;
+        max-width: 960px;
         background-color: var(--game-bg);
         box-shadow: var(--cornerless-dropbox-border-med);
-        /* min-width: 960px;
-    min-height: 640px; */
-        padding: 20px 20px;
+        padding: auto;
         display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
     }
-    .welcome-to-the-dungeon {
-        background-color: var(--red);
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+    iframe.game {
+        aspect-ratio: 16/11.5 !important;
+    }
+    iframe.yt {
+        aspect-ratio: 560/340 !important; /* 560 x 315 is the embed dimensions */
+        padding: 20px 20px;
+    }
+
+    .mobile-game-warning {
+        display: inline-block;
+        text-align: center;
+    }
+    @media screen and (min-width: 636px) {
+        .mobile-game-warning {
+            display: none;
+        }
     }
 </style>

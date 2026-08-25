@@ -7,7 +7,7 @@ author: 'Riley Schnee'
 ## Asset Credits
 Due to the short 2 week timeline for this project, I leveraged free assets & some lecture scripts, both of which was allowed by the EECS 494 course for this project. This allowed me to focus on the core game mechanics, game loop, UI/UX, level design, and learning to hook everything up!
 
-### ---- Visuals/Prefabs ----
+### Visuals/Prefabs
 
 I customized most of them to have functionality with my own scripts and components. All prefabs, except for Medieval Cartoon Warriors, came script free.
 
@@ -36,7 +36,7 @@ https://creazilla.com/nodes/16207-landscape-parchment-background-clipart
 - Piazzolla Font -- 
 https://fonts.google.com/specimen/Piazzolla
 
-### ---- Scripting ----
+### Scripting
 
 - EventBus.cs -- Credit to [Austin Yarger](https://ayarger.engin.umich.edu/): 
 https://github.com/ayarger/494_demos/blob/master/DemoEventBusPubSub/Assets/PubSubDemo/Scripts/EventBus.cs
@@ -55,7 +55,7 @@ https://www.youtube.com/watch?v=wWyx7_cIxP8
 Used the singleton pattern shown in class:
 https://github.com/ayarger/494_demos/blob/master/flappy_bird_systems_demonstration/Assets/Scripts/Systems/ToastManager.cs
 
-### ---- Audio ----
+### Audio
 
 - Adventurer NPCs -- Those clips are custom...they're my family members with some editing.
 

@@ -121,11 +121,34 @@ a.bold-hover:hover {
     gap: 20px;
 }
 
+p {
+    font-size: 1rem;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    line-height: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+p+h1,
+p+h2,
+p+h3,
+ul+h1,
+ul+h2,
+ul+h3 {
+    margin-top: 24px;
+}
+
 ul {
     list-style-type: "✴︎   ";
     list-style-position: outside;
-    margin-left: -15px;
-    margin-top: -5px;
+    margin-left: -10px;
 }
 
 li {
@@ -138,6 +161,16 @@ li:first-child {
 
 li:last-child {
     margin-bottom: 0;
+}
+
+article {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    line-break: anywhere;
 }
 
 /* Enforce a crisp, block-based retro UI layout */

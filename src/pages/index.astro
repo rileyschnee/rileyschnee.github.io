@@ -39,8 +39,7 @@ const hobbies = {
 	<!-- Hobbies -->
 	<div class="pixel-box" style="max-width: 500px;">
 		<h2>In my free time...</h2>
-		I enjoy exploring alternate and fantastical worlds! <br> Here's what I'm currently reading, watching, and playing...
-		<br />
+		<p>		I enjoy exploring alternate and fantastical worlds! <br> Here's what I'm currently reading, watching, and playing...</p>
 		{
 			hobbies.currentReads.length !== 0 && (
 				<h4>Books:</h4>
@@ -89,13 +88,12 @@ const hobbies = {
     margin-bottom: 30px;
     padding: 20px 20px 20px 20px;
     box-sizing: border-box;
-
 }
 
 .profile-title {
-    margin-bottom: -15px;
     text-align: center;
     font-size: 1.5rem;
+	margin-bottom: 40px;
 }
 
 .profile-columns {
@@ -116,13 +114,16 @@ const hobbies = {
     padding: 10px 10px 10px 10px;
     background-color: var(--brown);
     box-shadow: var(--cornerless-dropbox-border-med);
+	margin-bottom: 20px;
 }
 
-.profile-text {
+.profile-text p, .profile-text article {
     flex: 1;
     font-size: 1.1rem;
     line-height: 1.5;
-	margin-top: -25px;
+	margin-top: -10px;
+
+	line-break: normal;
 }
 
 /* ==========================================
