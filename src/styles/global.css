@@ -165,12 +165,11 @@ li:last-child {
 
 article {
     width: 100%;
-    max-width: 800px;
     margin: auto;
     display: flex;
     flex-direction: column;
 
-    line-break: anywhere;
+    overflow-wrap: break-word;
 }
 
 /* Enforce a crisp, block-based retro UI layout */
