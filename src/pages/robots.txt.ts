@@ -1,38 +1,12 @@
 import type { APIRoute } from 'astro';
 
-const robotsTxt = `
-# Block AI Training and Agents
-User-agent: GPTBot
-Disallow: /
+/* Bots to block: primarily training bots! */
+const badBots = ['GPTBot', 'ChatGPT-User', 'Google-Extended', 'Anthropic AI', 'ClaudeBot', 'Claude-Web', 'CCBot', 'PerplexityBot', 'OAI-SearchBot', 'Meta-ExternalAgent', 'Bytespider'];
 
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: Anthropic AI
-Disallow: /
-
-User-agent: PerplexityBot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: OAI-SearchBot
-Disallow: /
-
-# Allow Recruiters & Search Engine Sourcing
-User-agent: *
-Allow: /
-`.trim();
+const botRules = badBots.map(bot => `User-agent: ${bot}\nDisallow: /`).join('\n\n');
 
 export const GET: APIRoute = () => {
-  return new Response(robotsTxt, {
+  return new Response(botRules, {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },
   });
 };
