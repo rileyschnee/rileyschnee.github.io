@@ -58,7 +58,7 @@ const { gameTitle, gameSrc, type, bgColor } = Astro.props;
         max-width: 960px;
         background-color: var(--game-bg);
         box-shadow: var(--cornerless-dropbox-border-med);
-        padding: auto;
+        padding: 0px 10px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -69,11 +69,12 @@ const { gameTitle, gameSrc, type, bgColor } = Astro.props;
         height: 100%;
     }
     iframe.game {
-        aspect-ratio: 16/11.5 !important;
+        aspect-ratio: 960/700 !important;
+        translate: -0px -3%;
     }
     iframe.yt {
         aspect-ratio: 560/340 !important; /* 560 x 315 is the embed dimensions */
-        padding: 20px 20px;
+        padding: 20px 10px;
     }
 
     .mobile-game-warning {
