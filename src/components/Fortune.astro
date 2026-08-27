@@ -1,0 +1,59 @@
+---
+import Image from "astro/components/Image.astro";
+import crystal_ball_hover from "../assets/art/crystal_ball_glow_1000.png";
+import crystal_ball from "../assets/art/crystal_ball_default_1000.png";
+---
+
+<div id="fortune_cookie" class="fortune-container hidden">
+<p id="fortune_text" class="crystal-ball-fortune"></p>
+</div>
+
+<script>
+    const fortunes: string[] = [
+        "The spirits are mildly perturbed today.",
+        "Do you wish me to give you a reading for the meager price of 50 Bells?",
+    ];
+    let lastIndex: number = fortunes.length;
+
+    function fortune() {
+        let randomIndex = lastIndex;
+        while (randomIndex === lastIndex) {
+            randomIndex = Math.floor(Math.random() * fortunes.length);
+        }
+        lastIndex = randomIndex;
+        return fortunes[randomIndex];
+    }
+
+    const ball = document.getElementById("crystal-ball");
+    const fortune_cookie = document.getElementById("fortune_cookie");
+    const fortune_text = document.getElementById("fortune_text");
+
+    if (ball && fortune_cookie && fortune_text) {
+        ball.addEventListener("click", () => {
+            fortune_text.textContent = fortune();
+            // unveil the fortune
+            fortune_cookie.classList.remove("hidden");
+        });
+    }
+</script>
+
+<style>
+    .fortune-container {
+        align-self: right;
+        display: relative;
+        box-shadow: var(--cornerless-box-border-sm);
+        width: fit-content;
+        margin: auto;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+    .crystal-ball-fortune {
+        display: relative;
+        z-index: 10;
+        margin: 5px;
+    }
+    .hidden {
+        visibility: hidden;
+    }
+</style>
