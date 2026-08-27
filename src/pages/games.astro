@@ -1,10 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { IDENTITY, SITE_METADATA } from "../constants.js";
-import monster from "../assets/art/dungeon_monster_1000.png";
-import witch from "../assets/art/witch.png";
+
 import LinkButton from "../components/LinkButton.astro";
 import Image from "astro/components/Image.astro";
+
+import monster from "../assets/art/dungeon_monster_1000.png";
+import witch from "../assets/art/witch.png";
+import rupee from "../assets/art/rupee.png";
 
 const pageTitle = "Games";
 ---
@@ -28,16 +31,20 @@ const pageTitle = "Games";
 			</div>
 			<p></p>
 			<p style="line-height: 1.5rem;">
-				I created this game during my last semester as a Computer
-				Science student at the University of Michigan (Fall 2020) for
-				EECS 494: Intro to Game Development. It took roughly 2 weeks to
-				build, and I leveraged open source assets which helped a ton,
-				considering the short deadline.
+				Meet Monty. He was recently hired by the Dungeon Master to
+				handle clean up after the daring parties that venture into their
+				domain...which means disposing of the bodies and re-arming the
+				traps that led to their demise! If he fails to get everything
+				back in order before the DM checks in...well...let's hope it
+				doesn't come to that...
 			</p>
 			<p style="line-height: 1.5rem;">
 				Fun fact: My parents and sister performed the voice acting for
 				the perishing adventures! ...On that morbid note, good luck with
 				the clean up!
+			</p>
+			<p style="line-height: 1.5rem;">
+				Project #2 (2 weeks, solo) for EECS 494: Video Game Development
 			</p>
 		</div>
 
@@ -45,7 +52,7 @@ const pageTitle = "Games";
 		<div class="pixel-box" style="max-width: 600px;">
 			<Image
 				src={witch}
-				alt="dungeon monster pixel art"
+				alt="star witch pixel art"
 				class="pixel-art img-float-right w-64 ratio-1-2"
 				style="transform: scaleX(-1); margin-right: 15px; margin-bottom: 10px;"
 			/>
@@ -81,6 +88,32 @@ const pageTitle = "Games";
 					alt="Star Witch"
 				/></a
 			>
+			<p style="line-height: 1.5rem;">
+				Project #3 (6 weeks, 4 person team) for EECS 494: Video Game
+				Development
+			</p>
+		</div>
+
+		<!-- LOZ Card -->
+		<div class="pixel-box" style="max-width: 600px;">
+			<Image
+				src={rupee}
+				alt="zelda pixel art"
+				class="pixel-art img-float-right w-32"
+				style="margin-top: 25px; margin-right: 30px; margin-bottom: 10px;"
+			/>
+			<h2>Legend of Zelda (NES) Dungeon Remake</h2>
+			<p>Handmaidens of Hyrule | Unity (2D)</p>
+			<!-- <div class="link-button-row"></div> -->
+			<p></p>
+			<p style="line-height: 1.5rem;">
+				Rebuilt the first dungeon from the original Legend of Zelda,
+				aiming for an exact remake with a unique twist.
+			</p>
+			<p style="line-height: 1.5rem;">
+				Project #1 (2 weeks, 2 person team) for EECS 494: Video Game
+				Development
+			</p>
 		</div>
 	</div>
 </BaseLayout>

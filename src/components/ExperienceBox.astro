@@ -10,14 +10,15 @@ export interface ExperienceEntry {
     where?: string;
     details?: string[] | string;
     type?: "professional" | "intern" | "high school";
+    tags?: string[];
 }
 
 const { exp } = Astro.props;
 ---
 
 <div class="pixel-box" style="max-width: 600px;">
-    <h3>{exp.company} | {exp.team}</h3>
-    <p>{exp.role} | {exp.when} | {exp.where}</p>
+    <h3>{exp.role} | {exp.company} - {exp.team}</h3>
+    <p>{exp.when} | {exp.where}</p>
     {
         typeof exp.details === "string" ? (
             // Single string
@@ -29,6 +30,18 @@ const { exp } = Astro.props;
                     <li>{detail}</li>
                 ))}
             </ul>
+        )
+    }
+    { exp.tags &&
+        (
+            <p>
+                {exp.tags.map((tag: string, index: number) => (
+                    <>
+                        <span>{tag}</span>
+                        {index < exp.tags.length - 1 && <span> ✴︎ </span>}
+                    </>
+                ))}
+            </p>
         )
     }
 </div>

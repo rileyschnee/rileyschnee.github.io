@@ -7,7 +7,7 @@
     --dark-green: #11160c;
     --green: #232c19;
     --purple: #1f1332;
-    --gold: #cea649;
+    --gold: lab(70.09% 4.53 52.35);
     /* brighter gold: dba119 */
     --cream: #d4ccbe;
     --red: #551110;
@@ -196,17 +196,13 @@ article {
     aspect-ratio: 1 / 1;
 }
 
-/* For 64x64 standard assets */
 .ratio-1-2 {
     aspect-ratio: 1 / 2;
 }
 
-/* For 32x64 tall assets */
 .ratio-2-1 {
     aspect-ratio: 2 / 1;
 }
-
-/* For 64x32 wide assets */
 
 .w-32 {
     width: 16px !important;

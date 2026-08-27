@@ -4,8 +4,10 @@ pubDate: 2026-08-19
 description: 'Asset credits for Welcome to the Dungeon.'
 author: 'Riley Schnee'
 ---
+I created this game during my last semester as a Computer Science student at the University of Michigan (Fall 2020) for EECS 494: Intro to Game Development.
+
 ## Asset Credits
-Due to the short 2 week timeline for this project, I leveraged free assets & some lecture scripts, both of which was allowed by the EECS 494 course for this project. This allowed me to focus on the core game mechanics, game loop, UI/UX, level design, and learning to hook everything up!
+Due to the short 2 week timeline for this project, I leveraged free assets & some lecture scripts, both of which was allowed for this project. This let me to focus on the core game mechanics, game loop, UI/UX, level design, and learning to hook everything up!
 
 ### Visuals/Prefabs
 
