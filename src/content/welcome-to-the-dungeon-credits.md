@@ -7,7 +7,7 @@ author: 'Riley Schnee'
 I created this game solo in 2 weeks during my last semester as a Computer Science student at the University of Michigan (Fall 2020) for EECS 494: Intro to Game Development. The build above is a snapshot of the game as it was when I submitted it for the course.
 
 ## Asset Credits
-Due to the short timeline for this project, I leveraged free assets & some lecture scripts, both of which were allowed for this project. This let me to focus on the core game mechanics, game loop, UI/UX, level design, and learning to hook everything up!
+Due to the short timeline for this project, I leveraged free assets & some lecture scripts (specifically credited below), both of which were allowed for this project. This let me to focus on the core game mechanics, game loop, UI/UX, level design, and learning to hook everything up!
 
 ### Visuals/Prefabs
 
