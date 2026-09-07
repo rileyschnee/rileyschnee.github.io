@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import { SITE_METADATA } from "../constants";
 import Fortune from "../components/Fortune.astro";
 import { ClientRouter } from "astro:transitions";
-import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import Analytics from '../components/Analytics.astro';
 
 const { pageTitle } = Astro.props;
 ---
@@ -19,7 +19,7 @@ const { pageTitle } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{SITE_METADATA.title}</title>
 		<!--  Uncomment to enable fade animations <ClientRouter fallback="animate" /> -->
-		<GoogleAnalytics />
+		<Analytics />
 	</head>
 	<body>
 		<Header />
