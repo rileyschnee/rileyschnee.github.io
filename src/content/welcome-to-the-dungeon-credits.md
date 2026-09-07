@@ -4,10 +4,10 @@ pubDate: 2026-08-19
 description: 'Asset credits for Welcome to the Dungeon.'
 author: 'Riley Schnee'
 ---
-I created this game during my last semester as a Computer Science student at the University of Michigan (Fall 2020) for EECS 494: Intro to Game Development.
+I created this game solo in 2 weeks during my last semester as a Computer Science student at the University of Michigan (Fall 2020) for EECS 494: Intro to Game Development. The build above is a snapshot of the game as it was when I submitted it for the course.
 
 ## Asset Credits
-Due to the short 2 week timeline for this project, I leveraged free assets & some lecture scripts, both of which was allowed for this project. This let me to focus on the core game mechanics, game loop, UI/UX, level design, and learning to hook everything up!
+Due to the short timeline for this project, I leveraged free assets & some lecture scripts, both of which were allowed for this project. This let me to focus on the core game mechanics, game loop, UI/UX, level design, and learning to hook everything up!
 
 ### Visuals/Prefabs
 
@@ -44,13 +44,13 @@ https://fonts.google.com/specimen/Piazzolla
 https://github.com/ayarger/494_demos/blob/master/DemoEventBusPubSub/Assets/PubSubDemo/Scripts/EventBus.cs
 
 - Timer.cs -- 
-I looked at this tutorial for guidance, so my final script highly resembles this:
+I used this tutorial for learning, so my final script highly resembles this:
 https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
 
 - FollowPlayer.cs --
 Based off of lecture example with the FollowTarget script, so some credit to [Austin Yarger](https://ayarger.engin.umich.edu/).
 
-- SeeThroughObstructions.cs -- Followed this tutorial, but wasn't yet done as of Gold Spike (final) version:
+- SeeThroughObstructions.cs -- Followed this tutorial, but wasn't yet completed as of the final submission:
 https://www.youtube.com/watch?v=wWyx7_cIxP8
 
 - Singleton Pattern --
