@@ -15,17 +15,30 @@ const experiences: ExperienceEntry[] = [
         role: "Senior Software Engineer",
         when: "July 2022 - Present",
         where: "New York, NY",
-        details: [],
+        details:
+            "I design, build and optimize foundational product backend at scale, handle complex system migrations, unblock team and organizational velocity, resolve systemic correctness gaps, drive bottoms-up engineering and product strategy, and occasionally launch a user-facing feature end-to-end. I am known for taking on highly ambiguous product infrastructure challenges, improving internal workflows, and building specialized developer tooling.",
         type: "professional",
-        // tags: [
-        //     "System Design",
-        //     "Hack/PHP",
-        //     "Python",
-        //     "AI-Assisted Development",
-        //     "GraphQL",
-        //     "React",
-        //     "SQL",
-        // ],
+        tags: [
+            "System Design",
+            "Hack/PHP",
+            "Python",
+            "AI-Assisted Development",
+            "GraphQL",
+            "React",
+            "SQL",
+            "Product Infra Engineering",         
+        ],
+    },
+    {
+        company: "Meta",
+        team: "Instagram Ads",
+        role: "Software Engineer",
+        when: "July 2022 - February 2025",
+        where: "New York, NY",
+        details:
+            "I led a cross-org initiative to consolidate fragmented backend verification checks into a single modular system, scaling adoption across hundreds of internal integration points to retire legacy technical debt. I also delivered the backend implementation for several high-visibility user feature rollouts, designed platform safety controls, and unified disparate team operations to optimize oncall health.",
+        type: "professional",
+        tags: ["System Design", "Hack/PHP", "Python", "SQL", "Cross-Functional Collaboration", "Product Engineering", "Product Infra Engineering"],
     },
     {
         company: "Meta",
@@ -33,72 +46,212 @@ const experiences: ExperienceEntry[] = [
         role: "Software Engineer",
         when: "June 2021 - July 2022",
         where: "New York, NY",
-        details: [],
+        details:
+            "I built and optimized user-facing content recommendation features driven by distributed data graphs and social signals.",
         type: "professional",
+        tags: ["A/B Testing", "Python", "Django"],
     },
     {
         company: "Meta",
         team: "Instagram Shopping Search",
         role: "Software Engineering Intern",
-        when: "June 2020 - Aug 2020",
+        when: "June 2020 - August 2020",
         where: "Remote",
-        details: [],
-        type: "professional",
+        details: [
+            "I implemented an embedding-based approach for retrieving visually similar products in Django and integrated it into internal prototype tooling to accelerate innovation and experimentation of search functions on Instagram.",
+            "I also voluntarily joined the company's 2020 Global Hackathon as a secondary project, collaborating with a designer and PM intern to sketch out and pitch a conceptual hashtag-driven feature to support local businesses.",
+        ],
+        type: "intern",
+        tags: ["Python", "Prototyping", "Retrieval Systems"],
     },
     {
         company: "Meta",
         team: "Facebook Marketplace Infrastructure",
         role: "Software Engineering Intern",
-        when: "June 2019 - Aug 2019",
+        when: "June 2019 - August 2019",
         where: "Menlo Park, CA",
-        details: [],
-        type: "professional",
+        details:
+            "I refactored the legacy value model system powering Facebook Marketplace's product ranking, writing a unified C++ API that improved code modularity by extracting complex calculation blocks into clean, reusable helper functions. This adapted architecture handled the end-to-end pipeline from machine learning predictions to live product sorting, and I implemented waterfall logging to audit runtime ranking calculations before documenting and presenting the final system to the team.",
+        type: "intern",
+        tags: ["C++", "Refactoring", "Logging", "Ranking Systems"],
     },
     {
         company: "Meta",
         team: "Facebook University (FBU) for Engineers",
         role: "iOS Track",
-        when: "June 2018 - Aug 2018",
+        when: "June 2018 - August 2018",
         where: "Menlo Park, CA",
-        details: [],
-        type: "professional",
+        details: [
+            "After my freshman year of college, I was selected to complete an intensive mobile development training program at Facebook, where I built MVP application clones of major platforms like Instagram and Twitter using Objective-C.",
+            "Following the training, I partnered with two other interns to design, architect, and develop a standalone iOS application focused on streamlined day-trip planning and navigation and leveraging external REST APIs.",
+        ],
+        type: "intern",
+        tags: ["iOS Development", "Prototyping", "Teamwork"],
+    },
+    {
+        company: "SEDScast",
+        team: "",
+        role: "Producer & Co-Host",
+        when: "May 2020 - June 2021",
+        where: "Remote",
+        details:
+            "During the pandemic, SEDS@UM founded a podcast on behalf of SEDS USA. As the producer, I handled the last few steps to broadcast episodes out into the world for three seasons. I began co-hosting episodes during season two, which gave me the opportunity to interview a variety of outstanding space industry professionals.",
+        type: "college",
+        tags: ["Podcasting"],
+    },
+    {
+        company: "Collaborative Lab for Advancing Work in Space (CLAWS)",
+        role: "Program Manager",
+        when: "August 2020 - December 2020",
+        where: "Remote",
+        details: [
+            "I led a multidisciplinary group of 20 students from 5+ University of Michigan departments to design and implement an augmented reality toolkit for the NASA SUITS design challenge, an annual national initiative where college student teams develop user interface solutions for future spaceflight needs.",
+            "I focused on product management and scaling our team from 6 to 20 members through recruitment efforts to integrate dedicated UI/UX designers and human-factors testing workflows. I was also the primary liaison for our NASA contacts and facilitated interviews with astronauts and other experts to understand end-user needs and fine-tune feature designs. I navigated CLAWS through a sudden transition to remote development in March 2020, delivering our final technical showcases virtually that May for the NASA SUITS challenge, the NASA Exploration Science Forum, and the University of Michigan's Space Symposium Day. In addition, our paper was accepted to the 2020 International Astronautical Congress (IAC), and we were invited to present our work at both the annual IAC and the Women in Space conference.",
+        ],
+        type: "college",
+        tags: [
+            "Cross-Functional Team Leadership",
+            "Stakeholder Engagement",
+            "Augmented Reality (AR)",
+            "Operational Planning",
+        ],
+    },
+    {
+        company: "Collaborative Lab for Advancing Work in Space (CLAWS)",
+        role: "Team Lead",
+        when: "August 2019 - August 2020",
+        where: "Ann Arbor, MI",
+        details: [
+            "I led a multidisciplinary group of 20 students from 5+ University of Michigan departments to design and implement an augmented reality toolkit for the NASA SUITS design challenge, an annual national initiative where college student teams develop user interface solutions for future spaceflight needs.",
+            "I focused on product management and scaling our team from 6 to 20 members through recruitment efforts to integrate dedicated UI/UX designers and human-factors testing workflows. I was also the primary liaison for our NASA contacts and facilitated interviews with astronauts and other experts to understand end-user needs and fine-tune feature designs. I navigated CLAWS through a sudden transition to remote development in March 2020, delivering our final technical showcases virtually that May for the NASA SUITS challenge, the NASA Exploration Science Forum, and the University of Michigan's Space Symposium Day. In addition, our paper was accepted to the 2020 International Astronautical Congress (IAC), and we were invited to present our work at both the annual IAC and the Women in Space conference.",
+        ],
+        type: "college",
+        tags: [
+            "Cross-Functional Team Leadership",
+            "Team Management",
+            "Product Management",
+            "Stakeholder Engagement",
+            "End User Research",
+            "Augmented Reality (AR)",
+            "Public Speaking",
+            "Technical Writing",
+        ],
+    },
+    {
+        company: "Collaborative Lab for Advancing Work in Space (CLAWS)",
+        role: "Software Engineer",
+        when: "January 2019 - July 2020",
+        where: "Ann Arbor, MI",
+        details: [
+            "I designed and implemented the core mission task system in C# for the CLAWS team's augmented reality HoloLens application prototype, known as MEISSA, built to streamline International Space Station (ISS) spacewalk/EVA procedures. I programmed the state machine backend and frontend UI to extensibly model real spacewalk procedures and handle dynamic mission task management that was displayed alongside the live biometric telemetry and ground support data streams.",
+            "Our team was invited by NASA, as one of twelve university student design teams, to travel to Johnson Space Center in Houston as part of their 2019 SUITS challenge. While there, we had the opportunity to test our prototype live with NASA EVA specialists and present to NASA staff.",
+        ],
+        type: "college",
+        tags: ["C#", "Unity", "Augmented Reality (AR)", "Software Design"],
     },
     {
         company: "University of Michigan",
         team: "EECS 280 Staff",
         role: "Instructional Assistant",
-        when: "Sept 2019 - Apr 2020",
+        when: "September 2019 - April 2020",
         where: "Ann Arbor, MI",
-        details: [],
-        type: "professional",
+        details:
+            "EECS 280: Programming and Introductory Data Structures is a core computer science course that uses C++ to teach foundational software engineering principles like data abstraction, object-oriented design, polymorphism, and manual memory management via pointers. I reinforced these concepts by leading weekly lab sessions for 20 students, conducting office hours for a 1,000+ student cohort, and evaluating handwritten coding logic on exams.",
+        type: "college",
+        tags: ["C++", "Teaching", "Debugging Code"],
+    },
+    {
+        company:
+            "Women in Science and Engineering Residential Program (WISE RP)",
+        role: "Peer Mentor",
+        when: "September 2018 - May 2019",
+        where: "Ann Arbor, MI",
+        details: [
+            "During my sophomore year at the University of Michigan, I was a peer mentor living in the WISE residence program, providing dedicated guidance and support to three freshman women navigating their first year in engineering. Beyond my formal mentees, I served as a general resource for anyone in the hall who needed a hand, whether it was reviewing resumes for their first internships, talking through foundational engineering coursework, or building technical confidence.",
+            "I frequently hosted informal debugging sessions out of my dorm room for both freshman and sophomore women...it was a hands-on coding mentorship experience that ultimately inspired me to become an EECS 280 instructional assistant the following year!",
+        ],
+        type: "college",
+        tags: ["Mentorship", "Debugging Code"],
     },
     {
         company: "Smithsonian National Air and Space Museum",
-        team: "Udvar Hazy Center",
+        team: "Udvar-Hazy Center",
         role: "Explainer",
-        when: "March 2015 - Aug 2017",
+        when: "March 2015 - August 2017",
         where: "Chantilly, VA",
-        details: [],
-        type: "professional",
+        details:
+            "As an Explainer, I engaged with and taught visitors about the science and innovation behind flight and space exploration through the use of hands-on activity carts and interactive demonstrations. I studied the curriculum documentation to master technical topics like basic aerodynamics, spacesuit mechanics, and flight controls so I could then translate that into clear, engaging explanations for the public and dynamically answer their questions.",
+        type: "high school",
+        tags: ["Teaching", "Technical Communication", "Outreach"],
     },
 ];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <h1 style="text-align:center;">Experience (XP)</h1>
+    <h1 style="text-align:center; font-style:italic;">Experience (XP)</h1>
     <div class="page-center-wrapper">
+        <div class="link-button-row">
         <LinkButton
             name="LinkedIn"
             url="https://www.linkedin.com/in/riley-schnee/details/experience/"
         />
-
+        </div>
+        <h2>Professional Work: 2021 - Present</h2>
         <div class="box-group">
             {
                 experiences.length !== 0 &&
-                    experiences.map((exp: ExperienceEntry) => (
-                        <ExperienceBox exp={exp} />
-                    ))
+                    experiences.map(
+                        (exp: ExperienceEntry) =>
+                            typeof exp.type === "string" &&
+                            exp.type === "professional" && (
+                                <ExperienceBox exp={exp} />
+                            ),
+                    )
             }
+        </div>
+
+        <h2>Internships: 2018-2020</h2>
+        <div class="box-group">
+            {
+                experiences.length !== 0 &&
+                    experiences.map(
+                        (exp: ExperienceEntry) =>
+                            typeof exp.type === "string" &&
+                            exp.type === "intern" && (
+                                <ExperienceBox exp={exp} />
+                            ),
+                    )
+            }
+        </div>
+
+        <h2>College: 2017-2021</h2>
+        <div class="box-group">
+            {
+                experiences.length !== 0 &&
+                    experiences.map(
+                        (exp: ExperienceEntry) =>
+                            typeof exp.type === "string" &&
+                            exp.type === "college" && (
+                                <ExperienceBox exp={exp} />
+                            ),
+                    )
+            }
+            <div class="box-group"></div>
+        </div>
+        
+        <h2>High School: 2013-2017</h2>
+        <div class="box-group">
+            {
+                experiences.length !== 0 &&
+                    experiences.map(
+                        (exp: ExperienceEntry) =>
+                            typeof exp.type === "string" &&
+                            exp.type === "high school" && (
+                                <ExperienceBox exp={exp} />
+                            ),
+                    )
+            }
+            <div class="box-group"></div>
         </div>
     </div>
 </BaseLayout>

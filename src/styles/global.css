@@ -115,7 +115,7 @@ a.bold-hover:hover {
     font-weight: bold;
 }
 
-.link-button-row {
+.link-row {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -279,7 +279,7 @@ footer {
     box-shadow: var(--cornerless-box-border-med);
 }
 
-.footer a {
+.link-button-row a {
     background-color: var(--hover-color);
     border: none;
     color: var(--link-color);
@@ -297,8 +297,8 @@ footer {
     box-shadow: var(--cornerless-box-border-sm);
 }
 
-.footer a:hover,
-.footer a:focus {
+.link-button-row a:hover,
+.link-button-row a:focus {
     background-color: var(--bg-color);
 }
 

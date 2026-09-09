@@ -13,41 +13,9 @@ const pageTitle = "Games";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2 style="text-align:center;">My completed (& playable!) games:</h2>
+    <h1 style="text-align:center; font-style:italic;">Shall we play a game?</h1>
 
 	<div class="box-group">
-		<!-- Welcome to the Dungeon Card -->
-		<div class="pixel-box" style="max-width: 600px;">
-			<Image
-				src={monster}
-				alt="dungeon monster pixel art"
-				class="pixel-art img-float-right w-128 ratio-1-1"
-				style="margin-bottom: -15px;"
-			/>
-			<h2>Welcome to the Dungeon</h2>
-			<p>Solo Developer | Unity (3D)</p>
-			<div class="link-button-row">
-				<LinkButton name="Play now" url="/welcome-to-the-dungeon" />
-			</div>
-			<p></p>
-			<p style="line-height: 1.5rem;">
-				Meet Monty. He was recently hired by the Dungeon Master to
-				handle clean up after the daring parties that venture into their
-				domain...which means disposing of the bodies and re-arming the
-				traps that led to their demise! If he fails to get everything
-				back in order before the DM checks in...well...let's hope it
-				doesn't come to that...
-			</p>
-			<p style="line-height: 1.5rem;">
-				Fun fact: My parents and sister performed the voice acting for
-				the perishing adventurers! ...On that morbid note, good luck with
-				the clean up!
-			</p>
-			<p style="line-height: 1.5rem;">
-				Project #2 (2 weeks, solo) for EECS 494: Video Game Development
-			</p>
-		</div>
-
 		<!-- Star Witch Card -->
 		<div class="pixel-box" style="max-width: 600px;">
 			<Image
@@ -58,7 +26,7 @@ const pageTitle = "Games";
 			/>
 			<h2>Star Witch</h2>
 			<p>Engineer & Technical Art, Lunar Ladies Studio | Unity (2D)</p>
-			<div class="link-button-row">
+			<div class="link-row">
 				<LinkButton name="Watch trailer" url="/star-witch" />
 				<LinkButton
 					name="View on Itch.io"
@@ -93,7 +61,37 @@ const pageTitle = "Games";
 				Development
 			</p>
 		</div>
-
+		<!-- Welcome to the Dungeon Card -->
+		<div class="pixel-box" style="max-width: 600px;">
+			<Image
+				src={monster}
+				alt="dungeon monster pixel art"
+				class="pixel-art img-float-right w-128 ratio-1-1"
+				style="margin-bottom: -15px;"
+			/>
+			<h2>Welcome to the Dungeon</h2>
+			<p>Solo Developer | Unity (3D) </p>
+			<div class="link-row">
+				<LinkButton name="Play now" url="/welcome-to-the-dungeon" />
+			</div>
+			<p></p>
+			<p style="line-height: 1.5rem;">
+				Meet Monty. He was recently hired by the Dungeon Master to
+				handle clean up after the daring parties that venture into their
+				domain...which means disposing of the bodies and re-arming the
+				traps that led to their demise! If he fails to get everything
+				back in order before the DM checks in...well...let's hope it
+				doesn't come to that...
+			</p>
+			<p style="line-height: 1.5rem;">
+				Fun fact: My parents and sister performed the voice acting for
+				the perishing adventurers! ...On that morbid note, good luck with
+				the clean up!
+			</p>
+			<p style="line-height: 1.5rem;">
+				Project #2 (2 weeks, solo) for EECS 494: Video Game Development
+			</p>
+		</div>
 		<!-- LOZ Card -->
 		<div class="pixel-box" style="max-width: 600px;">
 			<Image
@@ -104,7 +102,7 @@ const pageTitle = "Games";
 			/>
 			<h2>Legend of Zelda (NES) Dungeon Remake</h2>
 			<p>Handmaidens of Hyrule | Unity (2D)</p>
-			<!-- <div class="link-button-row"></div> -->
+			<!-- <div class="link-row"></div> -->
 			<p></p>
 			<p style="line-height: 1.5rem;">
 				Rebuilt the first dungeon from the original Legend of Zelda,

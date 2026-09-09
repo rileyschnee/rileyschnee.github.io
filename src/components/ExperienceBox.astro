@@ -4,37 +4,43 @@ import LinkButton from "./LinkButton.astro";
 
 export interface ExperienceEntry {
     company: string;
-    team: string;
+    team?: string;
     role: string;
     when: string;
     where?: string;
     details?: string[] | string;
-    type?: "professional" | "intern" | "high school";
+    type?: "professional" | "intern" | "college" | "high school";
     tags?: string[];
 }
 
 const { exp } = Astro.props;
 ---
 
-<div class="pixel-box" style="max-width: 600px;">
-    <h3>{exp.role} | {exp.company} - {exp.team}</h3>
-    <p>{exp.when} | {exp.where}</p>
+<div class="pixel-box" style="max-width: 850px;">
+    <h3>{exp.role} | {exp.company} {exp.team && <span> - {exp.team}</span>}</h3>
+    <p>{exp.when} {exp.where && <span> | {exp.where}</span>}</p>
     {
         typeof exp.details === "string" ? (
             // Single string
-            <p style="line-height: 1rem;">{exp.details}</p>
+            <p style="line-height: 1.5rem;">{exp.details}</p>
         ) : (
             // If it's a list, use bullets
-            <ul>
+            // <ul>
+            //     {exp.details.map((detail: string) => (
+            //         <li>{detail}</li>
+            //     ))}
+            // </ul>
+            <>
                 {exp.details.map((detail: string) => (
-                    <li>{detail}</li>
+                    <p style="line-height: 1.5rem;">{detail} </p>
                 ))}
-            </ul>
+            </>
         )
     }
-    { exp.tags &&
-        (
-            <p>
+    {
+        exp.tags && (
+            <p style="font-style: italic;">
+                <span>Skills Leveled Up: </span>
                 {exp.tags.map((tag: string, index: number) => (
                     <>
                         <span>{tag}</span>

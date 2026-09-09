@@ -3,10 +3,10 @@ import LinkButton from "./LinkButton.astro";
 import { IDENTITY } from "../constants.js";
 ---
 
-<footer class="footer">
+<footer class="footer link-button-row">
   {
     Object.entries(IDENTITY.socialLinks).map(([platformName, endpointUrl]) => (
-      <LinkButton name={platformName} url={endpointUrl} />
+      <LinkButton name={platformName} url={endpointUrl}/>
     ))
   }
 </footer>
