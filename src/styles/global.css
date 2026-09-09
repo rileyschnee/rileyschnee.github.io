@@ -54,16 +54,16 @@
         2px 0 0 0 var(--gold),
         /* Right line */
         0 6px 15px var(--shadow-color);
-    --cornerless-dropbox-border-med:
-        0 -4px 0 0 var(--gold),
+     --cornerless-box-border-sm-extra-shadow:
+        0 -2px 0 0 var(--gold),
         /* Top line */
-        0 4px 0 0 var(--gold),
+        0 2px 0 0 var(--gold),
         /* Bottom line */
-        -4px 0 0 0 var(--gold),
+        -2px 0 0 0 var(--gold),
         /* Left line */
-        4px 0 0 0 var(--gold),
+        2px 0 0 0 var(--gold),
         /* Right line */
-        0 12px 30px var(--shadow-color);
+        0 24px 60px var(--shadow-color);
 }
 
 
@@ -89,6 +89,10 @@ body {
 main {
     padding: 2rem;
     flex-grow: 1;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 /* Links, buttons and lists */
@@ -205,23 +209,23 @@ article {
 }
 
 .w-32 {
-    width: 16px !important;
-}
-
-.w-64 {
     width: 32px !important;
 }
 
-.w-128 {
+.w-64 {
     width: 64px !important;
 }
 
+.w-128 {
+    width: 128px !important;
+}
+
 .w-192 {
-    width: 86px !important;
+    width: 192px !important;
 }
 
 .w-256 {
-    width: 128px !important;
+    width: 256px !important;
 }
 
 .pixel-box {

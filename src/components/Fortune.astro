@@ -103,14 +103,15 @@ import crystal_ball from "../assets/art/crystal_ball_default_1000.png";
 
 <style>
     .fortune-container {
-        position: fixed;
+        position: absolute;
         top: 95px;
         right: 10px;
         align-self: right;
         display: relative;
         background-color: var(--purple);
-        box-shadow: var(--cornerless-box-border-sm);
+        box-shadow: var(--cornerless-box-border-sm-extra-shadow);
         width: fit-content;
+        max-width: 95%; /* necessary for small screens */
         justify-content: center;
         align-content: center;
         text-align: center;
@@ -119,9 +120,6 @@ import crystal_ball from "../assets/art/crystal_ball_default_1000.png";
     .crystal-ball-fortune {
         margin: 5px;
         padding: 0px 10px;
-    }
-    .hidden {
-        visibility: hidden;
     }
     .fade-element {
         opacity: 0;
