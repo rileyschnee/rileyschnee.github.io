@@ -4,56 +4,130 @@ import crystal_ball_hover from "../assets/art/crystal_ball_glow_1000.png";
 import crystal_ball from "../assets/art/crystal_ball_default_1000.png";
 ---
 
-<div id="fortune_cookie" class="fortune-container hidden">
-<p id="fortune_text" class="crystal-ball-fortune"></p>
+<div id="fortune_cookie" class="fortune-container fade-element">
+    <p id="fortune_text" class="crystal-ball-fortune"></p>
 </div>
 
 <script>
+    const wait = (ms: number) => new Promise((res) => setTimeout(res, ms));
+    const readablePause = 3000;
+    const fortuneFadePause = 800;
+    const initialFadePause = 1000;
+
+    let initialClick: boolean = true;
+
+    // Welcome messages
+    const animalCrossingWelcome: string[] = [
+        "Do you wish me to give you a reading for the meager price of 50 Bells?",
+        "If so, click again...",
+    ];
+    const stardewWelcome: string[] = [
+        "Welcome to Riley's Oracle the ONLY site where the voice of the spirits is channeled directly...to YOU!",
+        "Click again to reveal!",
+    ];
+    const stardewWelcome2: string[] = [
+        "Hoo...I see a glimmer within my scrying orb...A shard of knowledge from the future!",
+        "Give a click, get a fortune!",
+    ];
+    const initialMsgOptions: string[][] = [
+        animalCrossingWelcome,
+        stardewWelcome,
+        stardewWelcome2,
+    ];
+
+    function pickInitialMessage() {
+        let randomIMIndex = -1;
+        randomIMIndex = Math.floor(Math.random() * initialMsgOptions.length);
+        return initialMsgOptions[randomIMIndex];
+    }
+
+    // Fortunes
     const fortunes: string[] = [
         "The spirits are mildly perturbed today.",
-        "Do you wish me to give you a reading for the meager price of 50 Bells?",
+        "The spirits feel neutral today. The day is in your hands.",
+        "The spirits are in good humor today. I think you'll have a little extra luck.",
     ];
     let lastIndex: number = fortunes.length;
-
     function fortune() {
-        let randomIndex = lastIndex;
-        while (randomIndex === lastIndex) {
-            randomIndex = Math.floor(Math.random() * fortunes.length);
+        let randomFIndex = lastIndex;
+        while (randomFIndex === lastIndex) {
+            randomFIndex = Math.floor(Math.random() * fortunes.length);
         }
-        lastIndex = randomIndex;
-        return fortunes[randomIndex];
+        lastIndex = randomFIndex;
+        return fortunes[randomFIndex];
     }
 
     const ball = document.getElementById("crystal-ball");
     const fortune_cookie = document.getElementById("fortune_cookie");
     const fortune_text = document.getElementById("fortune_text");
+    let is_running = false;
 
     if (ball && fortune_cookie && fortune_text) {
-        ball.addEventListener("click", () => {
-            fortune_text.textContent = fortune();
-            // unveil the fortune
-            fortune_cookie.classList.remove("hidden");
+        ball.addEventListener("click", async () => {
+            if (is_running === true) {
+                return;
+            }
+            ball.classList.add("is-scrying");
+            is_running = true;
+            try {
+                if (initialClick === true) {
+                    let initialMsg = pickInitialMessage();
+                    for (const msg of initialMsg) {
+                        // show the message
+                        fortune_text.textContent = msg;
+                        fortune_cookie.classList.add("is-visible");
+                        await wait(readablePause);
+                        // hide the message
+                        fortune_cookie.classList.remove("is-visible");
+                        await wait(initialFadePause);
+                    }
+                    initialClick = false;
+                } else {
+                    fortune_text.textContent = fortune();
+                    // show the fortune
+                    fortune_cookie.classList.add("is-visible");
+                    await wait(readablePause);
+                    // hide the fortune
+                    fortune_cookie.classList.remove("is-visible");
+                    await wait(fortuneFadePause);
+                    // remove the text
+                    // fortune_text.textContent = "";
+                }
+            } finally {
+                is_running = false;
+                ball.classList.remove("is-scrying");
+            }
         });
     }
 </script>
 
 <style>
     .fortune-container {
+        position: fixed;
+        top: 95px;
+        right: 10px;
         align-self: right;
         display: relative;
+        background-color: var(--purple);
         box-shadow: var(--cornerless-box-border-sm);
         width: fit-content;
-        margin: auto;
         justify-content: center;
         align-content: center;
         text-align: center;
+        z-index: 100;
     }
     .crystal-ball-fortune {
-        display: relative;
-        z-index: 10;
         margin: 5px;
+        padding: 0px 10px;
     }
     .hidden {
         visibility: hidden;
+    }
+    .fade-element {
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+    }
+    .fade-element.is-visible {
+        opacity: 1;
     }
 </style>

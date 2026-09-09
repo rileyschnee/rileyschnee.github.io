@@ -22,25 +22,47 @@ import crystal_ball from "../assets/art/crystal_ball_default_1000.png";
         width: 64px;
         height: 64px;
         margin-right: 10px;
+        position: relative; 
         display: block;
-        align-items: center;
-        justify-content: center;
         padding: 0;
         cursor: pointer;
         border: none;
+        background: transparent;
+    }
+    .crystal-ball-btn img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.2s ease-in-out;
+    }
+    .crystal-ball-btn img.img-default {
+        opacity: 1;
+        z-index: 2;
     }
     /* Hide the hover image by default */
     .crystal-ball-btn img.img-hover {
-        display: none !important;
+        opacity: 0;
+        z-index: 1;
     }
-    .crystal-ball-btn img.img-default {
-        display: block !important;
+    /* Desktop only: prevent the crystal ball from looking active on first tap */
+    @media (hover: hover) {
+        /* When hovered, switch visibility */
+        .crystal-ball-btn:hover img.img-default {
+            opacity: 0;
+        }
+        .crystal-ball-btn:hover img.img-hover {
+            opacity: 1;
+            z-index: 3;
+        }
     }
-    /* When hovered, switch visibility */
-    .crystal-ball-btn:hover img.img-default {
-        display: none !important;
+    /* Allows me to keep hover-like state during fortune-telling */
+    .is-scrying img.img-default {
+        opacity: 0 !important;
     }
-    .crystal-ball-btn:hover img.img-hover {
-        display: block !important;
+    .is-scrying img.img-hover {
+        opacity: 1 !important;
+        z-index: 3 !important;
     }
 </style>
